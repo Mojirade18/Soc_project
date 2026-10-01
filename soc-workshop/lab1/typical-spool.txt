@@ -1,0 +1,195 @@
+rm -rf /tmp/sptest
+mkdir /tmp/sptest
+cp soc25-skills-ws-starterpack1-gem5.zip /tmp/sptest
+cd /tmp/sptest ; unzip soc25-skills-ws-starterpack1-gem5.zip; make
+Archive:  soc25-skills-ws-starterpack1-gem5.zip
+  inflating: copyright_message.txt   
+  inflating: cbg_baremetal_crt.s     
+  inflating: cbg_uart_driver.c       
+  inflating: cbg_zynq_uart_driver.c  
+  inflating: kickoff_baremetal.c     
+  inflating: Makefile                
+  inflating: mylinein.c              
+  inflating: mymon.c                 
+  inflating: memmap                  
+  inflating: prstdio.h               
+  inflating: prlibc.c                
+make[1]: Entering directory '/tmp/sptest'
+arm-linux-gnu-as --warn --fatal-warnings  cbg_baremetal_crt.s -o cbg_baremetal_crt.o
+arm-linux-gnu-gcc -c -g -Wall -O0 -nostdlib -nostartfiles -march=armv9-a kickoff_baremetal.c
+arm-linux-gnu-gcc -c -g -Wall -O0 -nostdlib -nostartfiles -march=armv9-a cbg_uart_driver.c
+arm-linux-gnu-objdump -d cbg_uart_driver.o
+
+cbg_uart_driver.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <cbg_uart_wrch>:
+   0:	e52db004 	push	{fp}		@ (str fp, [sp, #-4]!)
+   4:	e28db000 	add	fp, sp, #0
+   8:	e24dd00c 	sub	sp, sp, #12
+   c:	e1a03000 	mov	r3, r0
+  10:	e54b3005 	strb	r3, [fp, #-5]
+  14:	ea000000 	b	1c <cbg_uart_wrch+0x1c>
+  18:	e320f000 	nop	{0}
+  1c:	e3a03018 	mov	r3, #24
+  20:	e3413c09 	movt	r3, #7177	@ 0x1c09
+  24:	e5933000 	ldr	r3, [r3]
+  28:	e2033020 	and	r3, r3, #32
+  2c:	e3530000 	cmp	r3, #0
+  30:	1afffff8 	bne	18 <cbg_uart_wrch+0x18>
+  34:	e3a03000 	mov	r3, #0
+  38:	e3413c09 	movt	r3, #7177	@ 0x1c09
+  3c:	e55b2005 	ldrb	r2, [fp, #-5]
+  40:	e5832000 	str	r2, [r3]
+  44:	e320f000 	nop	{0}
+  48:	e28bd000 	add	sp, fp, #0
+  4c:	e49db004 	pop	{fp}		@ (ldr fp, [sp], #4)
+  50:	e12fff1e 	bx	lr
+
+00000054 <cbg_uart_rdch>:
+  54:	e52db004 	push	{fp}		@ (str fp, [sp, #-4]!)
+  58:	e28db000 	add	fp, sp, #0
+  5c:	ea000000 	b	64 <cbg_uart_rdch+0x10>
+  60:	e320f000 	nop	{0}
+  64:	e3a03018 	mov	r3, #24
+  68:	e3413c09 	movt	r3, #7177	@ 0x1c09
+  6c:	e5933000 	ldr	r3, [r3]
+  70:	e2033010 	and	r3, r3, #16
+  74:	e3530000 	cmp	r3, #0
+  78:	1afffff8 	bne	60 <cbg_uart_rdch+0xc>
+  7c:	e3a03000 	mov	r3, #0
+  80:	e3413c09 	movt	r3, #7177	@ 0x1c09
+  84:	e5933000 	ldr	r3, [r3]
+  88:	e6ef3073 	uxtb	r3, r3
+  8c:	e203307f 	and	r3, r3, #127	@ 0x7f
+  90:	e6ef3073 	uxtb	r3, r3
+  94:	e1a00003 	mov	r0, r3
+  98:	e28bd000 	add	sp, fp, #0
+  9c:	e49db004 	pop	{fp}		@ (ldr fp, [sp], #4)
+  a0:	e12fff1e 	bx	lr
+
+000000a4 <cbg_uart_init>:
+  a4:	e52db004 	push	{fp}		@ (str fp, [sp, #-4]!)
+  a8:	e28db000 	add	fp, sp, #0
+  ac:	e3a03038 	mov	r3, #56	@ 0x38
+  b0:	e3413c09 	movt	r3, #7177	@ 0x1c09
+  b4:	e3a02000 	mov	r2, #0
+  b8:	e5832000 	str	r2, [r3]
+  bc:	e3a03024 	mov	r3, #36	@ 0x24
+  c0:	e3413c09 	movt	r3, #7177	@ 0x1c09
+  c4:	e3a02004 	mov	r2, #4
+  c8:	e5832000 	str	r2, [r3]
+  cc:	e3a03028 	mov	r3, #40	@ 0x28
+  d0:	e3413c09 	movt	r3, #7177	@ 0x1c09
+  d4:	e3a02000 	mov	r2, #0
+  d8:	e5832000 	str	r2, [r3]
+  dc:	e3a03028 	mov	r3, #40	@ 0x28
+  e0:	e3413c09 	movt	r3, #7177	@ 0x1c09
+  e4:	e3a02070 	mov	r2, #112	@ 0x70
+  e8:	e5832000 	str	r2, [r3]
+  ec:	e3a03030 	mov	r3, #48	@ 0x30
+  f0:	e3413c09 	movt	r3, #7177	@ 0x1c09
+  f4:	e3a02c0f 	mov	r2, #3840	@ 0xf00
+  f8:	e5832000 	str	r2, [r3]
+  fc:	e3a03000 	mov	r3, #0
+ 100:	e3413c09 	movt	r3, #7177	@ 0x1c09
+ 104:	e5933000 	ldr	r3, [r3]
+ 108:	e320f000 	nop	{0}
+ 10c:	e28bd000 	add	sp, fp, #0
+ 110:	e49db004 	pop	{fp}		@ (ldr fp, [sp], #4)
+ 114:	e12fff1e 	bx	lr
+
+00000118 <cbg_uart_puts>:
+ 118:	e92d4800 	push	{fp, lr}
+ 11c:	e28db004 	add	fp, sp, #4
+ 120:	e24dd010 	sub	sp, sp, #16
+ 124:	e50b0010 	str	r0, [fp, #-16]
+ 128:	ea00000c 	b	160 <cbg_uart_puts+0x48>
+ 12c:	e51b3010 	ldr	r3, [fp, #-16]
+ 130:	e2832001 	add	r2, r3, #1
+ 134:	e50b2010 	str	r2, [fp, #-16]
+ 138:	e5d33000 	ldrb	r3, [r3]
+ 13c:	e54b3005 	strb	r3, [fp, #-5]
+ 140:	e55b3005 	ldrb	r3, [fp, #-5]
+ 144:	e353000a 	cmp	r3, #10
+ 148:	1a000001 	bne	154 <cbg_uart_puts+0x3c>
+ 14c:	e3a0000d 	mov	r0, #13
+ 150:	ebfffffe 	bl	0 <cbg_uart_wrch>
+ 154:	e55b3005 	ldrb	r3, [fp, #-5]
+ 158:	e1a00003 	mov	r0, r3
+ 15c:	ebfffffe 	bl	0 <cbg_uart_wrch>
+ 160:	e51b3010 	ldr	r3, [fp, #-16]
+ 164:	e5d33000 	ldrb	r3, [r3]
+ 168:	e3530000 	cmp	r3, #0
+ 16c:	1affffee 	bne	12c <cbg_uart_puts+0x14>
+ 170:	e320f000 	nop	{0}
+ 174:	e320f000 	nop	{0}
+ 178:	e24bd004 	sub	sp, fp, #4
+ 17c:	e8bd8800 	pop	{fp, pc}
+
+00000180 <emulator_exit_via_backdoor>:
+ 180:	e52db004 	push	{fp}		@ (str fp, [sp, #-4]!)
+ 184:	e28db000 	add	fp, sp, #0
+ 188:	e24dd00c 	sub	sp, sp, #12
+ 18c:	e50b0008 	str	r0, [fp, #-8]
+ 190:	e50b100c 	str	r1, [fp, #-12]
+ 194:	e3a00000 	mov	r0, #0
+ 198:	e3a01000 	mov	r1, #0
+ 19c:	ee210110 	mcr	1, 1, r0, cr1, cr0, {0}
+ 1a0:	e3a03020 	mov	r3, #32
+ 1a4:	e3413c09 	movt	r3, #7177	@ 0x1c09
+ 1a8:	e5933000 	ldr	r3, [r3]
+ 1ac:	e320f000 	nop	{0}
+ 1b0:	e28bd000 	add	sp, fp, #0
+ 1b4:	e49db004 	pop	{fp}		@ (ldr fp, [sp], #4)
+ 1b8:	e12fff1e 	bx	lr
+
+000001bc <spin_delay>:
+ 1bc:	e52db004 	push	{fp}		@ (str fp, [sp, #-4]!)
+ 1c0:	e28db000 	add	fp, sp, #0
+ 1c4:	e320f001 	yield
+ 1c8:	e320f001 	yield
+ 1cc:	e320f001 	yield
+ 1d0:	e320f000 	nop	{0}
+ 1d4:	e28bd000 	add	sp, fp, #0
+ 1d8:	e49db004 	pop	{fp}		@ (ldr fp, [sp], #4)
+ 1dc:	e12fff1e 	bx	lr
+arm-linux-gnu-gcc -c -g -Wall -O0 -nostdlib -nostartfiles -march=armv9-a mylinein.c
+arm-linux-gnu-gcc -c -g -Wall -O0 -nostdlib -nostartfiles -march=armv9-a -DHEAPBASE=0x20000 -DHEAPEND=0x30000 prlibc.c
+arm-linux-gnu-gcc -c -g -Wall -O0 -nostdlib -nostartfiles -march=armv9-a mymon.c
+arm-linux-gnu-ld cbg_baremetal_crt.o  mylinein.o prlibc.o mymon.o cbg_uart_driver.o kickoff_baremetal.o -T memmap -o built.elf
+arm-linux-gnu-ld: warning: cbg_baremetal_crt.o: missing .note.GNU-stack section implies executable stack
+arm-linux-gnu-ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+arm-linux-gnu-ld: warning: built.elf has a LOAD segment with RWX permissions
+arm-linux-gnu-objdump -d built.elf > built.dis
+time /home/djg11/d510/gem5/gem5/build/ARM/gem5.opt  \
+    /home/djg11/d510/gem5/gem5/configs/deprecated/example/fs.py \
+    --bare-metal \
+    --kernel=/home/djg11/Dropbox/d-d787/Arm-Haremi/Three-SoC-Lab-Exercises-or-Skills-Videos/soc-skills1a-gem5/software/built.elf \
+    --machine-type=VExpress_GEM5_V1
+Opening pydot (ruby)
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 24.1.0.2
+gem5 compiled Apr 13 2025 22:49:01
+gem5 started Apr 14 2025 07:58:07
+gem5 executing on bondi.mixerton.com, pid 1784787
+command line: /home/djg11/d510/gem5/gem5/build/ARM/gem5.opt /home/djg11/d510/gem5/gem5/configs/deprecated/example/fs.py --bare-metal --kernel=/home/djg11/Dropbox/d-d787/Arm-Haremi/Three-SoC-Lab-Exercises-or-Skills-Videos/soc-skills1a-gem5/software/built.elf --machine-type=VExpress_GEM5_V1
+
+warn: The fs.py script is deprecated. It will be removed in future releases of  gem5.
+Global frequency set at 1000000000000 ticks per second
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+src/sim/kernel_workload.cc:46: info: kernel located at: /home/djg11/Dropbox/d-d787/Arm-Haremi/Three-SoC-Lab-Exercises-or-Skills-Videos/soc-skills1a-gem5/software/built.elf
+src/arch/arm/system.cc:97: warn: Highest ARM exception-level set to AArch64 but the workload is for AArch32. Assuming you wanted these to match.
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+system.vncserver: Listening for connections on port 5900
+system.terminal: Listening for connections on port 3456
+system.realview.uart1.device: Listening for connections on port 3457
+system.realview.uart2.device: Listening for connections on port 3458
+system.remote_gdb: Listening for connections on port 7000
+**** REAL SIMULATION ****
+src/dev/arm/energy_ctrl.cc:252: warn: Existing EnergyCtrl, but no enabled DVFSHandler found.
+src/sim/simulate.cc:199: info: Entering event queue @ 0.  Starting simulation...
