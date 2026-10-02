@@ -1,0 +1,16 @@
+#
+# (C) 2025 DJ Greaves, University of Cambridge, UK.
+# Folder for miscellaneous/local or experimental devices.  
+
+Import('*')
+
+
+SimObject('Ttpu.py', sim_objects=['Ttpu']) ## cbg
+
+# This is the source code for the generic/base class.
+Source('ttpu.cc')
+
+# Add a ttpu flag to the enumeration of debuggable devices.
+DebugFlag('Ttpu')
+
+# eof

@@ -1,0 +1,123 @@
+verilator -cc soc25-ttpu.v
+- V e r i l a t i o n   R e p o r t: Verilator 5.024 2024-04-05 rev fedora-5.024
+- Verilator: Built from 0.016 MB sources in 3 modules, into 0.035 MB in 8 C++ files needing 0.000 MB
+- Verilator: Walltime 0.007 s (elab=0.000, cvt=0.004, bld=0.000); cpu 0.000 s on 1 threads; alloced 18.059 MB
+cd obj_dir;  VERILATOR_ROOT=/usr/share/verilator make -f Vsoc25__02dttpu.mk
+make[1]: Entering directory '/home/djg11/Dropbox/d-d787/Arm-Haremi/Three-SoC-Lab-Exercises-or-Skills-Videos/soc-skills3-verilator-fastmodels/obj_dir'
+/usr/bin/python3 /usr/share/verilator/bin/verilator_includer -DVL_INCLUDE_OPT=include Vsoc25__02dttpu.cpp Vsoc25__02dttpu___024root__DepSet_hd74f08f9__0.cpp Vsoc25__02dttpu___024root__DepSet_h9fd25a7b__0.cpp Vsoc25__02dttpu__ConstPool_0.cpp Vsoc25__02dttpu___024root__Slow.cpp Vsoc25__02dttpu___024root__DepSet_hd74f08f9__0__Slow.cpp Vsoc25__02dttpu___024root__DepSet_h9fd25a7b__0__Slow.cpp Vsoc25__02dttpu__Syms.cpp > Vsoc25__02dttpu__ALL.cpp
+g++ -Os -I/opt/systemc/include -I. -Wall -Wextra -Wfloat-conversion -Wlogical-op -Werror -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o Vsoc25__02dttpu__ALL.o Vsoc25__02dttpu__ALL.cpp
+echo "" > libVsoc25__02dttpu.verilator_deplist.tmp
+Archive ar -rcs libVsoc25__02dttpu.a Vsoc25__02dttpu__ALL.o
+g++ -Os -I/opt/systemc/include -I. -Wall -Wextra -Wfloat-conversion -Wlogical-op -Werror -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated.o /usr/share/verilator/include/verilated.cpp
+g++ -Os -I/opt/systemc/include -I. -Wall -Wextra -Wfloat-conversion -Wlogical-op -Werror -MMD -I/usr/share/verilator/include -I/usr/share/verilator/include/vltstd -DVM_COVERAGE=0 -DVM_SC=0 -DVM_TRACE=0 -DVM_TRACE_FST=0 -DVM_TRACE_VCD=0 -faligned-new -fcf-protection=none -Wno-bool-operation -Wno-shadow -Wno-sign-compare -Wno-tautological-compare -Wno-uninitialized -Wno-unused-but-set-parameter -Wno-unused-but-set-variable -Wno-unused-parameter -Wno-unused-variable      -c -o verilated_threads.o /usr/share/verilator/include/verilated_threads.cpp
+echo "" > libverilated.verilator_deplist.tmp
+Archive ar -rcs libverilated.a verilated.o verilated_threads.o
+echo "" > Vsoc25__02dttpu__ALL.verilator_deplist.tmp
+Archive ar -rcs Vsoc25__02dttpu__ALL.a Vsoc25__02dttpu__ALL.o
+rm libVsoc25__02dttpu.verilator_deplist.tmp Vsoc25__02dttpu__ALL.verilator_deplist.tmp libverilated.verilator_deplist.tmp
+make[1]: Leaving directory '/home/djg11/Dropbox/d-d787/Arm-Haremi/Three-SoC-Lab-Exercises-or-Skills-Videos/soc-skills3-verilator-fastmodels/obj_dir'
+g++ -DVL_TIME_STAMP64 -I/usr/share/verilator/include -Iobj_dir soc25_ttpu_verilator_main.cpp  obj_dir/verilated.o obj_dir/Vsoc25__02dttpu__ALL.a \
+obj_dir/verilated_threads.o
+./a.out
+TOP.SOC25_TTPU101: 1000 clocked
+TOP.SOC25_TTPU101: 2000 clocked
+TOP.SOC25_TTPU101: 3000 clocked
+TOP.SOC25_TTPU101: 4000 clocked
+TOP.SOC25_TTPU101: 5000 clocked
+TOP.SOC25_TTPU101: 6000 clocked
+TOP.SOC25_TTPU101: 7000 clocked
+TOP.SOC25_TTPU101: 8000 clocked
+TOP.SOC25_TTPU101: 9000 clocked
+TOP.SOC25_TTPU101: 10000 clocked
+TOP.SOC25_TTPU101: 11000 clocked
+TOP.SOC25_TTPU101: 12000 clocked
+TOP.SOC25_TTPU101: 13000 clocked
+TOP.SOC25_TTPU101: 14000 clocked
+TOP.SOC25_TTPU101: 15000 clocked
+TOP.SOC25_TTPU101: 16000 clocked
+TOP.SOC25_TTPU101: 17000 clocked
+TOP.SOC25_TTPU101: 18000 clocked
+TOP.SOC25_TTPU101: 19000 clocked
+TOP.SOC25_TTPU101: 20000 clocked
+TOP.SOC25_TTPU101: 21000 clocked
+TOP.SOC25_TTPU101: 22000 clocked
+TOP.SOC25_TTPU101: 23000 clocked
+TOP.SOC25_TTPU101: 24000 clocked
+TOP.SOC25_TTPU101: 25000 clocked
+TOP.SOC25_TTPU101: 26000 clocked
+TOP.SOC25_TTPU101: 27000 clocked
+TOP.SOC25_TTPU101: 28000 clocked
+TOP.SOC25_TTPU101: 29000 clocked
+TOP.SOC25_TTPU101: 30000 clocked
+TOP.SOC25_TTPU101: 31000 clocked
+TOP.SOC25_TTPU101: 32000 clocked
+TOP.SOC25_TTPU101: 33000 clocked
+TOP.SOC25_TTPU101: 34000 clocked
+TOP.SOC25_TTPU101: 35000 clocked
+TOP.SOC25_TTPU101: 36000 clocked
+TOP.SOC25_TTPU101: 37000 clocked
+TOP.SOC25_TTPU101: 38000 clocked
+TOP.SOC25_TTPU101: 39000 clocked
+TOP.SOC25_TTPU101: 40000 clocked
+TOP.SOC25_TTPU101: 41000 clocked
+TOP.SOC25_TTPU101: 42000 clocked
+TOP.SOC25_TTPU101: 43000 clocked
+TOP.SOC25_TTPU101: 44000 clocked
+TOP.SOC25_TTPU101: 45000 clocked
+TOP.SOC25_TTPU101: 46000 clocked
+TOP.SOC25_TTPU101: 47000 clocked
+TOP.SOC25_TTPU101: 48000 clocked
+TOP.SOC25_TTPU101: 49000 clocked
+TOP.SOC25_TTPU101: 50000 clocked
+TOP.SOC25_TTPU101: 51000 clocked
+TOP.SOC25_TTPU101: 52000 clocked
+TOP.SOC25_TTPU101: 53000 clocked
+TOP.SOC25_TTPU101: 54000 clocked
+TOP.SOC25_TTPU101: 55000 clocked
+TOP.SOC25_TTPU101: 56000 clocked
+TOP.SOC25_TTPU101: 57000 clocked
+TOP.SOC25_TTPU101: 58000 clocked
+TOP.SOC25_TTPU101: 59000 clocked
+TOP.SOC25_TTPU101: 60000 clocked
+TOP.SOC25_TTPU101: 61000 clocked
+TOP.SOC25_TTPU101: 62000 clocked
+TOP.SOC25_TTPU101: 63000 clocked
+TOP.SOC25_TTPU101: 64000 clocked
+TOP.SOC25_TTPU101: 65000 clocked
+TOP.SOC25_TTPU101: 66000 clocked
+TOP.SOC25_TTPU101: 67000 clocked
+TOP.SOC25_TTPU101: 68000 clocked
+TOP.SOC25_TTPU101: 69000 clocked
+TOP.SOC25_TTPU101: 70000 clocked
+TOP.SOC25_TTPU101: 71000 clocked
+TOP.SOC25_TTPU101: 72000 clocked
+TOP.SOC25_TTPU101: 73000 clocked
+TOP.SOC25_TTPU101: 74000 clocked
+TOP.SOC25_TTPU101: 75000 clocked
+TOP.SOC25_TTPU101: 76000 clocked
+TOP.SOC25_TTPU101: 77000 clocked
+TOP.SOC25_TTPU101: 78000 clocked
+TOP.SOC25_TTPU101: 79000 clocked
+TOP.SOC25_TTPU101: 80000 clocked
+TOP.SOC25_TTPU101: 81000 clocked
+TOP.SOC25_TTPU101: 82000 clocked
+TOP.SOC25_TTPU101: 83000 clocked
+TOP.SOC25_TTPU101: 84000 clocked
+TOP.SOC25_TTPU101: 85000 clocked
+TOP.SOC25_TTPU101: 86000 clocked
+TOP.SOC25_TTPU101: 87000 clocked
+TOP.SOC25_TTPU101: 88000 clocked
+TOP.SOC25_TTPU101: 89000 clocked
+TOP.SOC25_TTPU101: 90000 clocked
+TOP.SOC25_TTPU101: 91000 clocked
+TOP.SOC25_TTPU101: 92000 clocked
+TOP.SOC25_TTPU101: 93000 clocked
+TOP.SOC25_TTPU101: 94000 clocked
+TOP.SOC25_TTPU101: 95000 clocked
+TOP.SOC25_TTPU101: 96000 clocked
+TOP.SOC25_TTPU101: 97000 clocked
+TOP.SOC25_TTPU101: 98000 clocked
+TOP.SOC25_TTPU101: 99000 clocked
+TOP.SOC25_TTPU101: 100000 clocked
+TOP.SOC25_TTPU101: 101000 clocked
+Exit on clock count reached

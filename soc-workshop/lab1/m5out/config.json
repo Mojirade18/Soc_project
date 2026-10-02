@@ -871,7 +871,7 @@
             "resp_size": 16,
             "cpu_side_port": {
                 "role": "GEM5 RESPONDER",
-                "peer": "system.iobus.mem_side_ports[16]",
+                "peer": "system.iobus.mem_side_ports[17]",
                 "is_source": "False"
             },
             "mem_side_port": {
@@ -929,6 +929,7 @@
                     "system.realview.pwr_ctrl.pio",
                     "system.realview.vio0.pio",
                     "system.realview.vio1.pio",
+                    "system.realview.ttpu.pio",
                     "system.realview.uart0.pio",
                     "system.realview.uart1.pio",
                     "system.realview.uart2.pio",
@@ -2438,7 +2439,7 @@
                     "resp_size": 16,
                     "cpu_side_port": {
                         "role": "GEM5 RESPONDER",
-                        "peer": "system.iobus.mem_side_ports[15]",
+                        "peer": "system.iobus.mem_side_ports[16]",
                         "is_source": "False"
                     },
                     "mem_side_port": {
@@ -2724,6 +2725,48 @@
                     "is_source": "False"
                 }
             },
+            "ttpu": {
+                "type": "Ttpu101",
+                "cxx_class": "gem5::Ttpu101",
+                "name": "ttpu",
+                "path": "system.realview.ttpu",
+                "clk_domain": "system.clk_domain",
+                "device": "system.terminal",
+                "eventq_index": 0,
+                "interrupt": {
+                    "type": "ArmSPI",
+                    "cxx_class": "gem5::ArmSPIGen",
+                    "name": "interrupt",
+                    "path": "system.realview.ttpu.interrupt",
+                    "eventq_index": 0,
+                    "int_type": "IRQ_TYPE_LEVEL_HIGH",
+                    "num": 41,
+                    "platform": "system.realview"
+                },
+                "pio_addr": 470614016,
+                "pio_latency": 100000,
+                "platform": "system.realview",
+                "power_model": [],
+                "power_state": {
+                    "type": "PowerState",
+                    "cxx_class": "gem5::PowerState",
+                    "name": "power_state",
+                    "path": "system.realview.ttpu.power_state",
+                    "clk_gate_bins": 20,
+                    "clk_gate_max": 1000000000000,
+                    "clk_gate_min": 1000,
+                    "default_state": "UNDEFINED",
+                    "eventq_index": 0,
+                    "leaders": [],
+                    "possible_states": []
+                },
+                "system": "system",
+                "pio": {
+                    "role": "GEM5 RESPONDER",
+                    "peer": "system.iobus.mem_side_ports[11]",
+                    "is_source": "False"
+                }
+            },
             "uart": [
                 {
                     "type": "Pl011",
@@ -2765,7 +2808,7 @@
                     "system": "system",
                     "pio": {
                         "role": "GEM5 RESPONDER",
-                        "peer": "system.iobus.mem_side_ports[11]",
+                        "peer": "system.iobus.mem_side_ports[12]",
                         "is_source": "False"
                     }
                 },
@@ -2818,7 +2861,7 @@
                     "system": "system",
                     "pio": {
                         "role": "GEM5 RESPONDER",
-                        "peer": "system.iobus.mem_side_ports[12]",
+                        "peer": "system.iobus.mem_side_ports[13]",
                         "is_source": "False"
                     }
                 },
@@ -2871,7 +2914,7 @@
                     "system": "system",
                     "pio": {
                         "role": "GEM5 RESPONDER",
-                        "peer": "system.iobus.mem_side_ports[13]",
+                        "peer": "system.iobus.mem_side_ports[14]",
                         "is_source": "False"
                     }
                 },
@@ -2924,7 +2967,7 @@
                     "system": "system",
                     "pio": {
                         "role": "GEM5 RESPONDER",
-                        "peer": "system.iobus.mem_side_ports[14]",
+                        "peer": "system.iobus.mem_side_ports[15]",
                         "is_source": "False"
                     }
                 }

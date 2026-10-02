@@ -1,0 +1,117 @@
+
+6. Printing statistics.
+
+=== OneTimePad_512x17 ===
+
+   Number of wires:                315
+   Number of wire bits:            353
+   Number of public wires:           3
+   Number of public wire bits:      41
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                326
+     AND2_X1                         6
+     AND3_X1                         2
+     AOI211_X1                      10
+     AOI21_X1                       51
+     AOI221_X1                       7
+     AOI22_X1                        7
+     INV_X1                         15
+     MUX2_X1                        21
+     NAND2_X1                       43
+     NAND3_X1                       13
+     NAND4_X1                        1
+     NOR2_X1                        43
+     NOR3_X1                        15
+     NOR4_X1                         2
+     OAI211_X1                      14
+     OAI21_X1                       61
+     OAI221_X1                       5
+     OAI22_X1                        2
+     OAI33_X1                        2
+     OR2_X1                          1
+     OR3_X1                          1
+     XNOR2_X1                        1
+     XOR2_X1                         3
+
+   Chip area for module '\OneTimePad_512x17': 353.248000
+
+=== SOC25_TTPU101 ===
+
+   Number of wires:                215
+   Number of wire bits:            362
+   Number of public wires:          13
+   Number of public wire bits:     135
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                221
+     $print                          1
+     AND2_X1                        18
+     AND3_X1                         4
+     AND4_X1                         7
+     AOI21_X1                       10
+     AOI22_X1                        4
+     DFF_X1                         48
+     INV_X1                         14
+     MUX2_X1                        18
+     NAND2_X1                       17
+     NAND3_X1                        4
+     NAND4_X1                        2
+     NOR2_X1                        19
+     NOR3_X1                        16
+     NOR4_X1                         2
+     OAI21_X1                        4
+     OR2_X1                          3
+     OneTimePad_512x17               1
+     XNOR2_X1                        9
+     XOR2_X1                        20
+
+   Area for cell type $print is unknown!
+   Area for cell type \OneTimePad_512x17 is unknown!
+
+   Chip area for module '\SOC25_TTPU101': 418.684000
+
+=== design hierarchy ===
+
+   SOC25_TTPU101                     1
+     OneTimePad_512x17               1
+
+   Number of wires:                530
+   Number of wire bits:            715
+   Number of public wires:          16
+   Number of public wire bits:     176
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                546
+     $print                          1
+     AND2_X1                        24
+     AND3_X1                         6
+     AND4_X1                         7
+     AOI211_X1                      10
+     AOI21_X1                       61
+     AOI221_X1                       7
+     AOI22_X1                       11
+     DFF_X1                         48
+     INV_X1                         29
+     MUX2_X1                        39
+     NAND2_X1                       60
+     NAND3_X1                       17
+     NAND4_X1                        3
+     NOR2_X1                        62
+     NOR3_X1                        31
+     NOR4_X1                         4
+     OAI211_X1                      14
+     OAI21_X1                       65
+     OAI221_X1                       5
+     OAI22_X1                        2
+     OAI33_X1                        2
+     OR2_X1                          4
+     OR3_X1                          1
+     XNOR2_X1                       10
+     XOR2_X1                        23
+
+   Chip area for top module '\SOC25_TTPU101': 771.932000
+

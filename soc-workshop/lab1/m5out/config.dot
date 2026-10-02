@@ -1138,6 +1138,40 @@ fontsize=14;
 fontcolor="#000000";
 }
 }
+subgraph cluster_system_realview_ttpu {
+shape=box;
+label="ttpu \n: Ttpu101";
+tooltip="clk_domain&#61;system.clk_domain&#10;\device&#61;system.terminal&#10;\eventq_index&#61;0&#10;\interrupt&#61;system.realview.ttpu.interrupt&#10;\pio_addr&#61;470614016&#10;\pio_latency&#61;100000&#10;\platform&#61;system.realview&#10;\power_model&#61;&#10;\power_state&#61;system.realview.ttpu.power_state&#10;\system&#61;system";
+style="rounded, filled";
+color="#000000";
+fillcolor="#c7a793";
+fontname=Arial;
+fontsize=14;
+fontcolor="#000000";
+system_realview_ttpu_pio [shape=box, label=pio, style="rounded, filled", color="#000000", fillcolor="#9f8575", fontname=Arial, fontsize=14, fontcolor="#000000"];
+subgraph cluster_system_realview_ttpu_power_state {
+shape=box;
+label="power_state \n: PowerState";
+tooltip="clk_gate_bins&#61;20&#10;\clk_gate_max&#61;1000000000000&#10;\clk_gate_min&#61;1000&#10;\default_state&#61;UNDEFINED&#10;\eventq_index&#61;0&#10;\leaders&#61;&#10;\possible_states&#61;";
+style="rounded, filled";
+color="#000000";
+fillcolor="#bab6ae";
+fontname=Arial;
+fontsize=14;
+fontcolor="#000000";
+}
+subgraph cluster_system_realview_ttpu_interrupt {
+shape=box;
+label="interrupt \n: ArmSPI";
+tooltip="eventq_index&#61;0&#10;\int_type&#61;IRQ_TYPE_LEVEL_HIGH&#10;\num&#61;41&#10;\platform&#61;system.realview";
+style="rounded, filled";
+color="#000000";
+fillcolor="#bab6ae";
+fontname=Arial;
+fontsize=14;
+fontcolor="#000000";
+}
+}
 subgraph cluster_system_realview_watchdog {
 shape=box;
 label="watchdog \n: Sp805";
@@ -2286,6 +2320,7 @@ system_realview_uart2_pio -> system_iobus_mem_side_ports [dir=back];
 system_realview_uart3_pio -> system_iobus_mem_side_ports [dir=back];
 system_realview_kmi0_pio -> system_iobus_mem_side_ports [dir=back];
 system_realview_kmi1_pio -> system_iobus_mem_side_ports [dir=back];
+system_realview_ttpu_pio -> system_iobus_mem_side_ports [dir=back];
 system_realview_watchdog_pio -> system_iobus_mem_side_ports [dir=back];
 system_realview_rtc_pio -> system_iobus_mem_side_ports [dir=back];
 system_realview_pci_host_up_to_down_mem_side_port -> system_realview_pci_bus_cpu_side_ports [dir=forward];
