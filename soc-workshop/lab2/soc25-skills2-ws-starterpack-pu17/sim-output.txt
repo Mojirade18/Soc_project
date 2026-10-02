@@ -1,0 +1,200 @@
+iverilog -o /tmp/losim_iverilog.ivf -s SIMSYS rtl/pu17_testbench.v rtl/pu17.v rtl/xcadders.v rtl/uart16.v rtl/CBG_SSRAM0_16K_X_16.v EUCLIDTEST_ROM.v
+/tmp/losim_iverilog.ivf
+VCD info: dumpfile vcd.vcd opened for output.
+Hello World from the SoC-25 PU17 testbench.
+
+                  50  opreq=x rwbar=1  A=xxxx din=xxxx  dout=xxxx
+SIMSYS.the_cpu_core.pcm CPU RESET
+SIMSYS.the_cpu_core.pcm CPU RESET
+                 150  opreq=0 rwbar=1  A=xxxx din=xxxx  dout=xxxx
+                 250  opreq=0 rwbar=1  A=0000 din=18e2  dout=xxxx
+SIMSYS.the_cpu_core.pcm CPU RESET
+SIMSYS.the_cpu_core.pcm CPU RESET
+                 350  opreq=0 rwbar=1  A=0000 din=18e2  dout=xxxx
+                 450  opreq=0 rwbar=1  A=0000 din=18e2  dout=xxxx
+                 550  opreq=0 rwbar=1  A=0000 din=18e2  dout=xxxx
+                 650  opreq=1 rwbar=1  A=0000 din=18e2  dout=xxxx
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x0032;
+                 750  opreq=1 rwbar=1  A=0002 din=f500  dout=xxxx
+                 850  opreq=1 rwbar=1  A=0004 din=020d  dout=xxxx
+SIMSYS.the_cpu_core.rfile:     r2 <= 0x020d;
+                 950  opreq=1 rwbar=1  A=0006 din=d129  dout=0032
+                1050  opreq=0 rwbar=1  A=d129 din=d520  dout=020d
+                1150  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+                1250  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+                1350  opreq=1 rwbar=1  A=000c din=d1e1  dout=0032
+                1450  opreq=0 rwbar=1  A=d1e1 din=2567  dout=xxxx
+SIMSYS.the_cpu_core.rfile:     r3 <= 0x0032;
+                1550  opreq=1 rwbar=1  A=000e din=d0e2  dout=020d
+                1650  opreq=0 rwbar=1  A=d0e2 din=d520  dout=0032
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x020d;
+                1750  opreq=1 rwbar=1  A=0010 din=d163  dout=0032
+                1850  opreq=0 rwbar=1  A=d163 din=d520  dout=020d
+SIMSYS.the_cpu_core.rfile:     r2 <= 0x0032;
+                1950  opreq=1 rwbar=1  A=0012 din=d129  dout=020d
+                2050  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                2150  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+                2250  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+                2350  opreq=1 rwbar=1  A=0018 din=d092  dout=0032
+                2450  opreq=0 rwbar=1  A=d092 din=d129  dout=020d
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x01db;
+                2550  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+                2650  opreq=1 rwbar=1  A=0006 din=d129  dout=01db
+                2750  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                2850  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+                2950  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+                3050  opreq=1 rwbar=1  A=0012 din=d129  dout=01db
+                3150  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                3250  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+                3350  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+                3450  opreq=1 rwbar=1  A=0018 din=d092  dout=0032
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x01a9;
+                3550  opreq=0 rwbar=1  A=d092 din=d129  dout=01db
+                3650  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+                3750  opreq=1 rwbar=1  A=0006 din=d129  dout=01a9
+                3850  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                3950  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+                4050  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+                4150  opreq=1 rwbar=1  A=0012 din=d129  dout=01a9
+                4250  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                4350  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+                4450  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+                4550  opreq=1 rwbar=1  A=0018 din=d092  dout=0032
+                4650  opreq=0 rwbar=1  A=d092 din=d129  dout=01a9
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x0177;
+                4750  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+                4850  opreq=1 rwbar=1  A=0006 din=d129  dout=0177
+                4950  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                5050  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+                5150  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+                5250  opreq=1 rwbar=1  A=0012 din=d129  dout=0177
+                5350  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                5450  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+                5550  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+                5650  opreq=1 rwbar=1  A=0018 din=d092  dout=0032
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x0145;
+                5750  opreq=0 rwbar=1  A=d092 din=d129  dout=0177
+                5850  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+                5950  opreq=1 rwbar=1  A=0006 din=d129  dout=0145
+                6050  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                6150  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+                6250  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+                6350  opreq=1 rwbar=1  A=0012 din=d129  dout=0145
+                6450  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                6550  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+                6650  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+                6750  opreq=1 rwbar=1  A=0018 din=d092  dout=0032
+                6850  opreq=0 rwbar=1  A=d092 din=d129  dout=0145
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x0113;
+                6950  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+                7050  opreq=1 rwbar=1  A=0006 din=d129  dout=0113
+                7150  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                7250  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+                7350  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+                7450  opreq=1 rwbar=1  A=0012 din=d129  dout=0113
+                7550  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                7650  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+                7750  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+                7850  opreq=1 rwbar=1  A=0018 din=d092  dout=0032
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x00e1;
+                7950  opreq=0 rwbar=1  A=d092 din=d129  dout=0113
+                8050  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+                8150  opreq=1 rwbar=1  A=0006 din=d129  dout=00e1
+                8250  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                8350  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+                8450  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+                8550  opreq=1 rwbar=1  A=0012 din=d129  dout=00e1
+                8650  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                8750  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+                8850  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+                8950  opreq=1 rwbar=1  A=0018 din=d092  dout=0032
+                9050  opreq=0 rwbar=1  A=d092 din=d129  dout=00e1
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x00af;
+                9150  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+                9250  opreq=1 rwbar=1  A=0006 din=d129  dout=00af
+                9350  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                9450  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+                9550  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+                9650  opreq=1 rwbar=1  A=0012 din=d129  dout=00af
+                9750  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+                9850  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+                9950  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+               10050  opreq=1 rwbar=1  A=0018 din=d092  dout=0032
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x007d;
+               10150  opreq=0 rwbar=1  A=d092 din=d129  dout=00af
+               10250  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+               10350  opreq=1 rwbar=1  A=0006 din=d129  dout=007d
+               10450  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+               10550  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+               10650  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+               10750  opreq=1 rwbar=1  A=0012 din=d129  dout=007d
+               10850  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+               10950  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+               11050  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+               11150  opreq=1 rwbar=1  A=0018 din=d092  dout=0032
+               11250  opreq=0 rwbar=1  A=d092 din=d129  dout=007d
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x004b;
+               11350  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+               11450  opreq=1 rwbar=1  A=0006 din=d129  dout=004b
+               11550  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+               11650  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+               11750  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+               11850  opreq=1 rwbar=1  A=0012 din=d129  dout=004b
+               11950  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+               12050  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+               12150  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+               12250  opreq=1 rwbar=1  A=0018 din=d092  dout=0032
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x0019;
+               12350  opreq=0 rwbar=1  A=d092 din=d129  dout=004b
+               12450  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+               12550  opreq=1 rwbar=1  A=0006 din=d129  dout=0019
+               12650  opreq=0 rwbar=1  A=d129 din=d520  dout=0032
+               12750  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+               12850  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+               12950  opreq=1 rwbar=1  A=000c din=d1e1  dout=0019
+               13050  opreq=0 rwbar=1  A=d1e1 din=2567  dout=0032
+SIMSYS.the_cpu_core.rfile:     r3 <= 0x0019;
+               13150  opreq=1 rwbar=1  A=000e din=d0e2  dout=0032
+               13250  opreq=0 rwbar=1  A=d0e2 din=d520  dout=0019
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x0032;
+               13350  opreq=1 rwbar=1  A=0010 din=d163  dout=0019
+               13450  opreq=0 rwbar=1  A=d163 din=d520  dout=0032
+SIMSYS.the_cpu_core.rfile:     r2 <= 0x0019;
+               13550  opreq=1 rwbar=1  A=0012 din=d129  dout=0032
+               13650  opreq=0 rwbar=1  A=d129 din=d520  dout=0019
+               13750  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+               13850  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+               13950  opreq=1 rwbar=1  A=0018 din=d092  dout=0019
+               14050  opreq=0 rwbar=1  A=d092 din=d129  dout=0032
+SIMSYS.the_cpu_core.rfile:     r1 <= 0x0019;
+               14150  opreq=1 rwbar=1  A=001a din=caf6  dout=xxxx
+               14250  opreq=1 rwbar=1  A=0006 din=d129  dout=0019
+               14350  opreq=0 rwbar=1  A=d129 din=d520  dout=0019
+               14450  opreq=1 rwbar=1  A=0008 din=d814  dout=xxxx
+               14550  opreq=1 rwbar=1  A=000a din=0012  dout=xxxx
+               14650  opreq=1 rwbar=1  A=0012 din=d129  dout=0019
+               14750  opreq=0 rwbar=1  A=d129 din=d520  dout=0019
+               14850  opreq=1 rwbar=1  A=0014 din=d800  dout=xxxx
+               14950  opreq=1 rwbar=1  A=0016 din=001c  dout=xxxx
+               15050  opreq=1 rwbar=1  A=001c din=d4a0  dout=0019
+               15150  opreq=1 rwbar=1  A=001e din=f882  dout=0019
+               15250  opreq=1 rwbar=0  A=f882 din=00xx  dout=0019
+SIMSYS.i_uart16.ptos: TX CHAR output 
+SIMSYS.the_cpu_core.rfile:     r2 <= 0x004f;
+               15350  opreq=1 rwbar=1  A=0020 din=2567  dout=0019
+               15450  opreq=1 rwbar=1  A=0022 din=d520  dout=004f
+               15550  opreq=1 rwbar=1  A=0024 din=f882  dout=4f4f
+               15650  opreq=1 rwbar=0  A=f882 din=00xx  dout=004f
+SIMSYS.i_uart16.ptos: TX CHAR output O
+SIMSYS.the_cpu_core.rfile:     r2 <= 0x004b;
+               15750  opreq=1 rwbar=1  A=0026 din=2563  dout=004f
+               15850  opreq=1 rwbar=1  A=0028 din=d520  dout=004b
+               15950  opreq=1 rwbar=1  A=002a din=f882  dout=4b4b
+               16050  Backdoor finish sequence detected. UART 'K' character written.
+               16050  opreq=1 rwbar=0  A=f882 din=00xx  dout=004b
+SIMSYS.i_uart16.ptos: TX CHAR output K
+               16150  opreq=1 rwbar=1  A=002c din=ca00  dout=xxxx
+               16250  opreq=1 rwbar=1  A=002c din=ca00  dout=xxxx
+               16350  opreq=1 rwbar=1  A=002c din=ca00  dout=xxxx
+rtl/pu17_testbench.v:91: $finish called at 16450 (1s)
+               16450  opreq=1 rwbar=1  A=002c din=ca00  dout=xxxx

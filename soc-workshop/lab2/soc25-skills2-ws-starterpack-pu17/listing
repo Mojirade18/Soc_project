@@ -1,0 +1,54 @@
+** CBG PU17a assembler job test-src-code/euclidtest.s
+   1                                          ;; A demo of Euclid's Algorithm on the PU17 processor.
+   2                                          ;; (C) DJ Greaves, 1998-2024 University of Cambridge, Computer Laboratory.
+   3                                          ;; 
+   4                                          ;;  Wikipedia:  The Euclidean algorithm is based on the principle that the greatest common divisor of two
+   5                                          ;;  numbers does not change if the larger number is replaced by its difference with the smaller number.
+   6                                          
+   7                                          ;; Set up the addresses for programmed I/O access to the UART
+   8                               uart_data  .equ 0xf882
+   9                             uart_status  .equ 0xf880
+  10                             uart_txidle  .equ 1   ; Status register bit: ready for new tx data
+  11                               uart_rxav  .equ 2  ; Status register bit: fresh rx data is available.
+  12                                          
+  13                                          .org 0x0  ; Origin - load at zero, the PC reset vector value.
+  14                                          
+  15   0000 E218                                  lod R1,#50  ; First argument for Euclid
+  16   0002 00F50D02                              lod R2,#525  ; Second argument 
+  17                                          
+  18                             euclid_loop  ; Swap R1 and R2 so that R2 is smaller
+  19   0006 29D1                                  cmp R2,R1
+  20   0008 14D81200                              ble dont_swap
+  21   000C E1D1                                  mov R3,R1
+  22   000E E2D0                                  mov R1,R2
+  23   0010 63D1                                  mov  R2,R3
+  24                               dont_swap  ; Now see if values are equal.
+  25   0012 29D1                                  cmp R2,R1
+  26   0014 00D81C00                              beq finished ; If so, we have finished.
+  27   0018 92D0                                  sub R1,R2  ; Subtract smaller from the larger
+  28   001A F6CA                                  bra euclid_loop
+  29                                          
+  30                                finished  ; One of the values is unity
+  31                                          ;; So the HCF is in either of the registers, R1 or R2.
+  32                                          ;; If that is also unity, they were coprime.
+  33                                          
+  34                                          ;; Later we'll see a proper decimal print routine,
+  35                                          ;; but here we just hope the answer is less than 8 bits and write it to the UART. 
+  36                                          
+  37   001C A0D482F8                              str R1,uart_data
+  38                                          
+  39                                          
+  40   0020 6725                                  mov r2,#'O'  ; print OK when done
+  41   0022 20D582F8                              str r2,uart_data
+  42   0026 6325                                  mov r2,#'K'
+  43   0028 20D582F8                              str r2,uart_data
+  44                                          
+  45   002C 00CA                            self  bra self  ; We don't have a HALT instruction, so hang
+  46                                          
+  47                                          .end
+  48                                          
+  49                                          
+
+
+ERRORS = 0,   SRC CARDS READ = 49
+
