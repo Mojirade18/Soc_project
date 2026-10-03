@@ -1,0 +1,7 @@
+format: verilog
+input_paths:
+  - /design/work/results/nangate45/UART16/base/4_before_rsz_lec.v
+  - /design/work/results/nangate45/UART16/base/4_after_rsz_lec.v
+liberty_files:
+ - /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+log_file: /design/work/logs/nangate45/UART16/base/4_rsz_lec_check.log

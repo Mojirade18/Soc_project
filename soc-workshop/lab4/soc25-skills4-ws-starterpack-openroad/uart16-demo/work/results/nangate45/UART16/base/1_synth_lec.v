@@ -1,0 +1,1320 @@
+module UART16 (baudclk16,
+    clk,
+    rwbar,
+    sel,
+    serin,
+    serout,
+    addr,
+    dbusin,
+    dbusout);
+ input baudclk16;
+ input clk;
+ input rwbar;
+ input sel;
+ input serin;
+ output serout;
+ input [2:0] addr;
+ input [15:0] dbusin;
+ output [15:0] dbusout;
+
+ wire _000_;
+ wire _001_;
+ wire _002_;
+ wire _003_;
+ wire _004_;
+ wire _005_;
+ wire _006_;
+ wire _007_;
+ wire _008_;
+ wire _009_;
+ wire _010_;
+ wire _011_;
+ wire _012_;
+ wire _013_;
+ wire _014_;
+ wire _015_;
+ wire _016_;
+ wire _017_;
+ wire _018_;
+ wire _019_;
+ wire _020_;
+ wire _021_;
+ wire _022_;
+ wire _023_;
+ wire _024_;
+ wire _025_;
+ wire _026_;
+ wire _027_;
+ wire _028_;
+ wire _029_;
+ wire _030_;
+ wire _031_;
+ wire _032_;
+ wire _033_;
+ wire _034_;
+ wire _035_;
+ wire _036_;
+ wire _037_;
+ wire _038_;
+ wire _039_;
+ wire _040_;
+ wire _041_;
+ wire _042_;
+ wire _043_;
+ wire _044_;
+ wire _045_;
+ wire _046_;
+ wire _047_;
+ wire _048_;
+ wire _049_;
+ wire _050_;
+ wire _051_;
+ wire _052_;
+ wire _053_;
+ wire _054_;
+ wire _055_;
+ wire _056_;
+ wire _057_;
+ wire _058_;
+ wire _059_;
+ wire _060_;
+ wire _061_;
+ wire _062_;
+ wire _063_;
+ wire _064_;
+ wire _065_;
+ wire _066_;
+ wire _067_;
+ wire _068_;
+ wire _069_;
+ wire _070_;
+ wire _071_;
+ wire _072_;
+ wire _073_;
+ wire _074_;
+ wire _075_;
+ wire _076_;
+ wire _077_;
+ wire _078_;
+ wire _079_;
+ wire _080_;
+ wire _081_;
+ wire _082_;
+ wire _083_;
+ wire _084_;
+ wire _085_;
+ wire _086_;
+ wire _087_;
+ wire _088_;
+ wire _089_;
+ wire _090_;
+ wire _091_;
+ wire _092_;
+ wire _093_;
+ wire _094_;
+ wire _095_;
+ wire _096_;
+ wire _097_;
+ wire _098_;
+ wire _099_;
+ wire _100_;
+ wire _101_;
+ wire _102_;
+ wire _103_;
+ wire _104_;
+ wire _105_;
+ wire _106_;
+ wire _107_;
+ wire _108_;
+ wire _109_;
+ wire _110_;
+ wire _111_;
+ wire _112_;
+ wire _113_;
+ wire _114_;
+ wire _115_;
+ wire _116_;
+ wire _117_;
+ wire _118_;
+ wire _119_;
+ wire _120_;
+ wire _121_;
+ wire _122_;
+ wire _123_;
+ wire _124_;
+ wire _125_;
+ wire _126_;
+ wire _127_;
+ wire _128_;
+ wire _129_;
+ wire _130_;
+ wire _131_;
+ wire _132_;
+ wire _133_;
+ wire _134_;
+ wire _135_;
+ wire _136_;
+ wire _137_;
+ wire _138_;
+ wire _139_;
+ wire _140_;
+ wire _141_;
+ wire _142_;
+ wire _143_;
+ wire _144_;
+ wire _145_;
+ wire _146_;
+ wire _147_;
+ wire _148_;
+ wire _149_;
+ wire _150_;
+ wire _151_;
+ wire _152_;
+ wire _153_;
+ wire _154_;
+ wire _155_;
+ wire _156_;
+ wire _157_;
+ wire _158_;
+ wire _159_;
+ wire _160_;
+ wire _161_;
+ wire _162_;
+ wire _163_;
+ wire _164_;
+ wire _165_;
+ wire _166_;
+ wire _167_;
+ wire _168_;
+ wire _169_;
+ wire _170_;
+ wire _171_;
+ wire _172_;
+ wire _173_;
+ wire _174_;
+ wire _175_;
+ wire _176_;
+ wire _177_;
+ wire _178_;
+ wire _179_;
+ wire _180_;
+ wire _181_;
+ wire _182_;
+ wire _183_;
+ wire _184_;
+ wire _185_;
+ wire _186_;
+ wire _187_;
+ wire _188_;
+ wire _189_;
+ wire _190_;
+ wire _191_;
+ wire _192_;
+ wire _193_;
+ wire _194_;
+ wire _195_;
+ wire _196_;
+ wire _197_;
+ wire _198_;
+ wire _199_;
+ wire _200_;
+ wire _201_;
+ wire _202_;
+ wire _203_;
+ wire _204_;
+ wire _205_;
+ wire _206_;
+ wire _207_;
+ wire _208_;
+ wire _209_;
+ wire _210_;
+ wire _211_;
+ wire _212_;
+ wire _213_;
+ wire _214_;
+ wire _215_;
+ wire _216_;
+ wire _217_;
+ wire _218_;
+ wire _219_;
+ wire _220_;
+ wire _221_;
+ wire _222_;
+ wire _223_;
+ wire _224_;
+ wire _225_;
+ wire _226_;
+ wire _227_;
+ wire _228_;
+ wire _229_;
+ wire _230_;
+ wire _231_;
+ wire _232_;
+ wire _233_;
+ wire _234_;
+ wire _235_;
+ wire _236_;
+ wire _237_;
+ wire _238_;
+ wire _239_;
+ wire _240_;
+ wire _241_;
+ wire _242_;
+ wire _243_;
+ wire _244_;
+ wire _245_;
+ wire _246_;
+ wire _247_;
+ wire _248_;
+ wire _249_;
+ wire _250_;
+ wire _251_;
+ wire _252_;
+ wire _253_;
+ wire _254_;
+ wire _255_;
+ wire _256_;
+ wire _257_;
+ wire _258_;
+ wire _259_;
+ wire _260_;
+ wire _261_;
+ wire _262_;
+ wire _263_;
+ wire _264_;
+ wire _265_;
+ wire _266_;
+ wire _267_;
+ wire _268_;
+ wire _269_;
+ wire _270_;
+ wire _271_;
+ wire _272_;
+ wire _273_;
+ wire _274_;
+ wire _275_;
+ wire _276_;
+ wire _277_;
+ wire _278_;
+ wire _279_;
+ wire _280_;
+ wire _281_;
+ wire _282_;
+ wire _283_;
+ wire _284_;
+ wire _285_;
+ wire \ptos.newd[1] ;
+ wire \ptos.newd[2] ;
+ wire \ptos.newd[3] ;
+ wire \ptos.newd[4] ;
+ wire \ptos.newd[5] ;
+ wire \ptos.newd[6] ;
+ wire \ptos.newd[7] ;
+ wire \ptos.newd[8] ;
+ wire \ptos.start ;
+ wire \ptos.t_div16[0] ;
+ wire \ptos.t_div16[1] ;
+ wire \ptos.t_div16[2] ;
+ wire \ptos.t_div16[3] ;
+ wire \ptos.txframe[0] ;
+ wire \ptos.txframe[1] ;
+ wire \ptos.txframe[2] ;
+ wire \ptos.txframe[3] ;
+ wire \ptos.txshift[0] ;
+ wire \ptos.txshift[1] ;
+ wire \ptos.txshift[2] ;
+ wire \ptos.txshift[3] ;
+ wire \ptos.txshift[4] ;
+ wire \ptos.txshift[5] ;
+ wire \ptos.txshift[6] ;
+ wire \ptos.txshift[7] ;
+ wire \ptos.txshift[8] ;
+ wire rxav;
+ wire \rxhold[0] ;
+ wire \rxhold[1] ;
+ wire \rxhold[2] ;
+ wire \rxhold[3] ;
+ wire \rxhold[4] ;
+ wire \rxhold[5] ;
+ wire \rxhold[6] ;
+ wire \rxhold[7] ;
+ wire \stop.dec ;
+ wire \stop.dec_a ;
+ wire \stop.dec_b ;
+ wire \stop.endgap_counter[0] ;
+ wire \stop.endgap_counter[1] ;
+ wire \stop.endgap_counter[2] ;
+ wire \stop.endgap_counter[3] ;
+ wire \stop.phase[0] ;
+ wire \stop.phase[1] ;
+ wire \stop.phase[2] ;
+ wire \stop.phase[3] ;
+ wire \stop.rseq[0] ;
+ wire \stop.rseq[1] ;
+ wire \stop.rseq[2] ;
+ wire \stop.rseq[3] ;
+ wire \stop.running ;
+ wire \stop.rxshift[0] ;
+ wire \stop.rxshift[1] ;
+ wire \stop.rxshift[2] ;
+ wire \stop.rxshift[3] ;
+ wire \stop.rxshift[4] ;
+ wire \stop.rxshift[5] ;
+ wire \stop.rxshift[6] ;
+ wire \stop.rxshift[7] ;
+
+ XOR2_X1 _286_ (.A(\ptos.t_div16[2] ),
+    .B(_010_),
+    .Z(_002_));
+ INV_X1 _287_ (.A(_012_),
+    .ZN(_083_));
+ BUF_X4 _288_ (.A(\ptos.txframe[2] ),
+    .Z(_084_));
+ NOR3_X4 _289_ (.A1(_083_),
+    .A2(_084_),
+    .A3(\ptos.txframe[3] ),
+    .ZN(_085_));
+ NAND2_X4 _290_ (.A1(_085_),
+    .A2(\ptos.start ),
+    .ZN(_086_));
+ BUF_X8 _291_ (.A(_086_),
+    .Z(_087_));
+ NAND2_X1 _292_ (.A1(_087_),
+    .A2(\ptos.txshift[7] ),
+    .ZN(_088_));
+ INV_X1 _293_ (.A(\ptos.newd[6] ),
+    .ZN(_089_));
+ OAI21_X2 _294_ (.A(_088_),
+    .B1(_089_),
+    .B2(_087_),
+    .ZN(_080_));
+ NAND2_X1 _295_ (.A1(_086_),
+    .A2(\ptos.txshift[6] ),
+    .ZN(_090_));
+ INV_X1 _296_ (.A(\ptos.newd[5] ),
+    .ZN(_091_));
+ OAI21_X2 _297_ (.A(_090_),
+    .B1(_091_),
+    .B2(_087_),
+    .ZN(_079_));
+ NAND2_X1 _298_ (.A1(_086_),
+    .A2(\ptos.txshift[5] ),
+    .ZN(_092_));
+ INV_X1 _299_ (.A(\ptos.newd[4] ),
+    .ZN(_093_));
+ OAI21_X2 _300_ (.A(_092_),
+    .B1(_093_),
+    .B2(_087_),
+    .ZN(_078_));
+ NAND2_X1 _301_ (.A1(_086_),
+    .A2(\ptos.txshift[4] ),
+    .ZN(_094_));
+ INV_X1 _302_ (.A(\ptos.newd[3] ),
+    .ZN(_095_));
+ OAI21_X2 _303_ (.A(_094_),
+    .B1(_095_),
+    .B2(_087_),
+    .ZN(_077_));
+ NAND2_X1 _304_ (.A1(_086_),
+    .A2(\ptos.txshift[3] ),
+    .ZN(_096_));
+ INV_X1 _305_ (.A(\ptos.newd[2] ),
+    .ZN(_097_));
+ OAI21_X2 _306_ (.A(_096_),
+    .B1(_097_),
+    .B2(_087_),
+    .ZN(_076_));
+ NAND2_X1 _307_ (.A1(_086_),
+    .A2(\ptos.txshift[2] ),
+    .ZN(_098_));
+ INV_X1 _308_ (.A(\ptos.newd[1] ),
+    .ZN(_099_));
+ OAI21_X2 _309_ (.A(_098_),
+    .B1(_099_),
+    .B2(_087_),
+    .ZN(_075_));
+ BUF_X4 _310_ (.A(addr[0]),
+    .Z(_100_));
+ NAND2_X1 _311_ (.A1(\rxhold[6] ),
+    .A2(_100_),
+    .ZN(_101_));
+ INV_X1 _312_ (.A(_101_),
+    .ZN(dbusout[6]));
+ NAND2_X1 _313_ (.A1(_100_),
+    .A2(\rxhold[5] ),
+    .ZN(_102_));
+ INV_X1 _314_ (.A(_102_),
+    .ZN(dbusout[5]));
+ NAND2_X1 _315_ (.A1(_100_),
+    .A2(\rxhold[4] ),
+    .ZN(_103_));
+ INV_X1 _316_ (.A(_103_),
+    .ZN(dbusout[4]));
+ NAND2_X1 _317_ (.A1(_100_),
+    .A2(\rxhold[3] ),
+    .ZN(_104_));
+ INV_X1 _318_ (.A(_104_),
+    .ZN(dbusout[3]));
+ NAND2_X1 _319_ (.A1(_100_),
+    .A2(\rxhold[2] ),
+    .ZN(_105_));
+ INV_X1 _320_ (.A(_105_),
+    .ZN(dbusout[2]));
+ MUX2_X1 _321_ (.A(rxav),
+    .B(\rxhold[1] ),
+    .S(_100_),
+    .Z(dbusout[1]));
+ NAND2_X1 _322_ (.A1(_100_),
+    .A2(\rxhold[0] ),
+    .ZN(_106_));
+ NAND2_X1 _323_ (.A1(_085_),
+    .A2(_008_),
+    .ZN(_107_));
+ OAI21_X1 _324_ (.A(_106_),
+    .B1(_107_),
+    .B2(_100_),
+    .ZN(dbusout[0]));
+ INV_X1 _325_ (.A(\ptos.start ),
+    .ZN(_108_));
+ NAND2_X1 _326_ (.A1(_085_),
+    .A2(_108_),
+    .ZN(_109_));
+ NOR2_X1 _327_ (.A1(_084_),
+    .A2(_007_),
+    .ZN(_110_));
+ NAND2_X1 _328_ (.A1(_110_),
+    .A2(_014_),
+    .ZN(_111_));
+ NAND2_X1 _329_ (.A1(_109_),
+    .A2(_111_),
+    .ZN(_112_));
+ XNOR2_X1 _330_ (.A(_084_),
+    .B(_015_),
+    .ZN(_113_));
+ NOR2_X1 _331_ (.A1(_112_),
+    .A2(_113_),
+    .ZN(_030_));
+ NAND3_X1 _332_ (.A1(_109_),
+    .A2(_013_),
+    .A3(_111_),
+    .ZN(_114_));
+ INV_X1 _333_ (.A(_109_),
+    .ZN(_115_));
+ NAND2_X1 _334_ (.A1(_115_),
+    .A2(\ptos.txframe[1] ),
+    .ZN(_116_));
+ NAND2_X1 _335_ (.A1(_114_),
+    .A2(_116_),
+    .ZN(_031_));
+ NAND3_X1 _336_ (.A1(_109_),
+    .A2(_011_),
+    .A3(_111_),
+    .ZN(_117_));
+ NAND2_X1 _337_ (.A1(_115_),
+    .A2(\ptos.txframe[0] ),
+    .ZN(_118_));
+ NAND2_X1 _338_ (.A1(_117_),
+    .A2(_118_),
+    .ZN(_032_));
+ NAND2_X1 _339_ (.A1(_100_),
+    .A2(sel),
+    .ZN(_119_));
+ NOR2_X4 _340_ (.A1(_119_),
+    .A2(rwbar),
+    .ZN(_120_));
+ BUF_X4 _341_ (.A(_120_),
+    .Z(_121_));
+ NAND2_X1 _342_ (.A1(_121_),
+    .A2(dbusin[6]),
+    .ZN(_122_));
+ INV_X1 _343_ (.A(\ptos.newd[7] ),
+    .ZN(_123_));
+ OAI21_X1 _344_ (.A(_122_),
+    .B1(_123_),
+    .B2(_121_),
+    .ZN(_033_));
+ NAND2_X1 _345_ (.A1(_121_),
+    .A2(dbusin[5]),
+    .ZN(_124_));
+ OAI21_X1 _346_ (.A(_124_),
+    .B1(_089_),
+    .B2(_121_),
+    .ZN(_034_));
+ NAND2_X1 _347_ (.A1(_120_),
+    .A2(dbusin[4]),
+    .ZN(_125_));
+ OAI21_X1 _348_ (.A(_125_),
+    .B1(_091_),
+    .B2(_121_),
+    .ZN(_035_));
+ NAND2_X1 _349_ (.A1(_120_),
+    .A2(dbusin[3]),
+    .ZN(_126_));
+ OAI21_X1 _350_ (.A(_126_),
+    .B1(_093_),
+    .B2(_121_),
+    .ZN(_036_));
+ NAND2_X1 _351_ (.A1(_120_),
+    .A2(dbusin[2]),
+    .ZN(_127_));
+ OAI21_X1 _352_ (.A(_127_),
+    .B1(_095_),
+    .B2(_121_),
+    .ZN(_037_));
+ NAND2_X1 _353_ (.A1(_120_),
+    .A2(dbusin[1]),
+    .ZN(_128_));
+ OAI21_X1 _354_ (.A(_128_),
+    .B1(_097_),
+    .B2(_121_),
+    .ZN(_038_));
+ NAND2_X1 _355_ (.A1(_120_),
+    .A2(dbusin[0]),
+    .ZN(_129_));
+ OAI21_X1 _356_ (.A(_129_),
+    .B1(_099_),
+    .B2(_121_),
+    .ZN(_039_));
+ NOR2_X2 _357_ (.A1(\stop.rseq[3] ),
+    .A2(_009_),
+    .ZN(_130_));
+ NAND2_X2 _358_ (.A1(_130_),
+    .A2(_017_),
+    .ZN(_131_));
+ BUF_X4 _359_ (.A(_131_),
+    .Z(_132_));
+ INV_X1 _360_ (.A(_005_),
+    .ZN(_133_));
+ NAND2_X2 _361_ (.A1(_132_),
+    .A2(_133_),
+    .ZN(_134_));
+ BUF_X1 _362_ (.A(\stop.running ),
+    .Z(_135_));
+ INV_X1 _363_ (.A(\stop.phase[2] ),
+    .ZN(_136_));
+ XNOR2_X1 _364_ (.A(_136_),
+    .B(_029_),
+    .ZN(_137_));
+ NAND3_X1 _365_ (.A1(_134_),
+    .A2(_135_),
+    .A3(_137_),
+    .ZN(_138_));
+ INV_X1 _366_ (.A(_134_),
+    .ZN(_139_));
+ NAND2_X1 _367_ (.A1(_139_),
+    .A2(\stop.phase[2] ),
+    .ZN(_140_));
+ NAND2_X1 _368_ (.A1(_138_),
+    .A2(_140_),
+    .ZN(_040_));
+ NAND3_X1 _369_ (.A1(_134_),
+    .A2(_135_),
+    .A3(_027_),
+    .ZN(_141_));
+ NAND2_X1 _370_ (.A1(_139_),
+    .A2(\stop.phase[1] ),
+    .ZN(_142_));
+ NAND2_X1 _371_ (.A1(_141_),
+    .A2(_142_),
+    .ZN(_041_));
+ NAND3_X1 _372_ (.A1(_134_),
+    .A2(_025_),
+    .A3(_135_),
+    .ZN(_143_));
+ NAND2_X1 _373_ (.A1(_139_),
+    .A2(\stop.phase[0] ),
+    .ZN(_144_));
+ NAND2_X1 _374_ (.A1(_143_),
+    .A2(_144_),
+    .ZN(_042_));
+ NAND2_X1 _375_ (.A1(\stop.rseq[2] ),
+    .A2(_019_),
+    .ZN(_145_));
+ INV_X1 _376_ (.A(_145_),
+    .ZN(_146_));
+ NOR2_X1 _377_ (.A1(\stop.rseq[2] ),
+    .A2(_019_),
+    .ZN(_147_));
+ INV_X1 _378_ (.A(_135_),
+    .ZN(_148_));
+ NOR3_X1 _379_ (.A1(_146_),
+    .A2(_147_),
+    .A3(_148_),
+    .ZN(_043_));
+ NOR2_X1 _380_ (.A1(_148_),
+    .A2(_018_),
+    .ZN(_044_));
+ NAND2_X1 _381_ (.A1(_135_),
+    .A2(_016_),
+    .ZN(_149_));
+ INV_X1 _382_ (.A(_149_),
+    .ZN(_045_));
+ NAND2_X1 _383_ (.A1(_132_),
+    .A2(\stop.rxshift[6] ),
+    .ZN(_150_));
+ INV_X1 _384_ (.A(\stop.rxshift[7] ),
+    .ZN(_151_));
+ OAI21_X1 _385_ (.A(_150_),
+    .B1(_151_),
+    .B2(_132_),
+    .ZN(_046_));
+ MUX2_X1 _386_ (.A(\stop.rxshift[6] ),
+    .B(\stop.rxshift[5] ),
+    .S(_132_),
+    .Z(_047_));
+ MUX2_X1 _387_ (.A(\stop.rxshift[5] ),
+    .B(\stop.rxshift[4] ),
+    .S(_132_),
+    .Z(_048_));
+ MUX2_X1 _388_ (.A(\stop.rxshift[4] ),
+    .B(\stop.rxshift[3] ),
+    .S(_132_),
+    .Z(_049_));
+ MUX2_X1 _389_ (.A(\stop.rxshift[3] ),
+    .B(\stop.rxshift[2] ),
+    .S(_132_),
+    .Z(_050_));
+ MUX2_X1 _390_ (.A(\stop.rxshift[2] ),
+    .B(\stop.rxshift[1] ),
+    .S(_132_),
+    .Z(_051_));
+ MUX2_X1 _391_ (.A(\stop.rxshift[1] ),
+    .B(\stop.rxshift[0] ),
+    .S(_132_),
+    .Z(_052_));
+ INV_X1 _392_ (.A(_006_),
+    .ZN(_152_));
+ NAND3_X2 _393_ (.A1(_136_),
+    .A2(_152_),
+    .A3(_028_),
+    .ZN(_153_));
+ NOR2_X4 _394_ (.A1(_153_),
+    .A2(_131_),
+    .ZN(_154_));
+ INV_X1 _395_ (.A(baudclk16),
+    .ZN(_155_));
+ NAND2_X4 _396_ (.A1(_154_),
+    .A2(_155_),
+    .ZN(_156_));
+ NAND2_X1 _397_ (.A1(_156_),
+    .A2(\rxhold[6] ),
+    .ZN(_157_));
+ NAND3_X1 _398_ (.A1(_154_),
+    .A2(\stop.rxshift[6] ),
+    .A3(_155_),
+    .ZN(_158_));
+ NAND2_X1 _399_ (.A1(_157_),
+    .A2(_158_),
+    .ZN(_053_));
+ NAND2_X1 _400_ (.A1(_156_),
+    .A2(\rxhold[5] ),
+    .ZN(_159_));
+ NAND3_X1 _401_ (.A1(_154_),
+    .A2(\stop.rxshift[5] ),
+    .A3(_155_),
+    .ZN(_160_));
+ NAND2_X1 _402_ (.A1(_159_),
+    .A2(_160_),
+    .ZN(_054_));
+ NAND2_X1 _403_ (.A1(_156_),
+    .A2(\rxhold[4] ),
+    .ZN(_161_));
+ NAND3_X1 _404_ (.A1(_154_),
+    .A2(\stop.rxshift[4] ),
+    .A3(_155_),
+    .ZN(_162_));
+ NAND2_X1 _405_ (.A1(_161_),
+    .A2(_162_),
+    .ZN(_055_));
+ NAND2_X1 _406_ (.A1(_156_),
+    .A2(\rxhold[3] ),
+    .ZN(_163_));
+ NAND3_X1 _407_ (.A1(_154_),
+    .A2(\stop.rxshift[3] ),
+    .A3(_155_),
+    .ZN(_164_));
+ NAND2_X1 _408_ (.A1(_163_),
+    .A2(_164_),
+    .ZN(_056_));
+ NAND2_X1 _409_ (.A1(_156_),
+    .A2(\rxhold[2] ),
+    .ZN(_165_));
+ NAND3_X1 _410_ (.A1(_154_),
+    .A2(\stop.rxshift[2] ),
+    .A3(_155_),
+    .ZN(_166_));
+ NAND2_X1 _411_ (.A1(_165_),
+    .A2(_166_),
+    .ZN(_057_));
+ NAND2_X1 _412_ (.A1(_156_),
+    .A2(\rxhold[1] ),
+    .ZN(_167_));
+ NAND3_X1 _413_ (.A1(_154_),
+    .A2(\stop.rxshift[1] ),
+    .A3(_155_),
+    .ZN(_168_));
+ NAND2_X1 _414_ (.A1(_167_),
+    .A2(_168_),
+    .ZN(_058_));
+ NAND2_X1 _415_ (.A1(_156_),
+    .A2(\rxhold[0] ),
+    .ZN(_169_));
+ NAND3_X1 _416_ (.A1(_154_),
+    .A2(\stop.rxshift[0] ),
+    .A3(_155_),
+    .ZN(_170_));
+ NAND2_X1 _417_ (.A1(_169_),
+    .A2(_170_),
+    .ZN(_059_));
+ NAND3_X1 _418_ (.A1(\ptos.t_div16[2] ),
+    .A2(\ptos.t_div16[0] ),
+    .A3(\ptos.t_div16[1] ),
+    .ZN(_171_));
+ XNOR2_X1 _419_ (.A(_171_),
+    .B(\ptos.t_div16[3] ),
+    .ZN(_003_));
+ INV_X1 _420_ (.A(_153_),
+    .ZN(_172_));
+ INV_X4 _421_ (.A(_132_),
+    .ZN(_173_));
+ NAND2_X2 _422_ (.A1(_172_),
+    .A2(_173_),
+    .ZN(_174_));
+ CLKBUF_X2 _423_ (.A(_000_),
+    .Z(_175_));
+ NAND3_X1 _424_ (.A1(_175_),
+    .A2(_001_),
+    .A3(_024_),
+    .ZN(_176_));
+ INV_X1 _425_ (.A(_176_),
+    .ZN(_177_));
+ NAND2_X2 _426_ (.A1(_174_),
+    .A2(_177_),
+    .ZN(_178_));
+ XOR2_X1 _427_ (.A(_175_),
+    .B(_022_),
+    .Z(_179_));
+ NAND2_X1 _428_ (.A1(_179_),
+    .A2(_176_),
+    .ZN(_180_));
+ NAND2_X1 _429_ (.A1(_178_),
+    .A2(_180_),
+    .ZN(_181_));
+ NAND3_X1 _430_ (.A1(_174_),
+    .A2(\stop.endgap_counter[2] ),
+    .A3(_177_),
+    .ZN(_182_));
+ NAND2_X1 _431_ (.A1(_181_),
+    .A2(_182_),
+    .ZN(_060_));
+ OR2_X1 _432_ (.A1(_177_),
+    .A2(_023_),
+    .ZN(_183_));
+ INV_X1 _433_ (.A(\stop.endgap_counter[1] ),
+    .ZN(_184_));
+ OAI21_X1 _434_ (.A(_183_),
+    .B1(_178_),
+    .B2(_184_),
+    .ZN(_061_));
+ OR2_X1 _435_ (.A1(_177_),
+    .A2(_020_),
+    .ZN(_185_));
+ NAND2_X1 _436_ (.A1(_178_),
+    .A2(_185_),
+    .ZN(_186_));
+ NAND3_X1 _437_ (.A1(_174_),
+    .A2(\stop.endgap_counter[0] ),
+    .A3(_177_),
+    .ZN(_187_));
+ NAND2_X1 _438_ (.A1(_186_),
+    .A2(_187_),
+    .ZN(_062_));
+ OAI21_X1 _439_ (.A(_111_),
+    .B1(_121_),
+    .B2(\ptos.start ),
+    .ZN(_188_));
+ INV_X1 _440_ (.A(_188_),
+    .ZN(_063_));
+ NAND3_X1 _441_ (.A1(_084_),
+    .A2(\ptos.txframe[1] ),
+    .A3(\ptos.txframe[0] ),
+    .ZN(_189_));
+ XOR2_X1 _442_ (.A(_189_),
+    .B(\ptos.txframe[3] ),
+    .Z(_190_));
+ NOR2_X1 _443_ (.A1(_190_),
+    .A2(_112_),
+    .ZN(_064_));
+ OR2_X4 _444_ (.A1(_087_),
+    .A2(\ptos.newd[8] ),
+    .ZN(_065_));
+ NAND2_X1 _445_ (.A1(_087_),
+    .A2(\ptos.txshift[1] ),
+    .ZN(_191_));
+ INV_X1 _446_ (.A(_191_),
+    .ZN(_066_));
+ MUX2_X1 _447_ (.A(\ptos.newd[8] ),
+    .B(dbusin[7]),
+    .S(_120_),
+    .Z(_067_));
+ NAND3_X1 _448_ (.A1(_174_),
+    .A2(\stop.endgap_counter[3] ),
+    .A3(_177_),
+    .ZN(_192_));
+ NAND2_X1 _449_ (.A1(_175_),
+    .A2(\stop.endgap_counter[1] ),
+    .ZN(_193_));
+ INV_X1 _450_ (.A(\stop.endgap_counter[2] ),
+    .ZN(_194_));
+ NAND2_X1 _451_ (.A1(_193_),
+    .A2(_194_),
+    .ZN(_195_));
+ INV_X1 _452_ (.A(_195_),
+    .ZN(_196_));
+ NAND3_X1 _453_ (.A1(_175_),
+    .A2(\stop.endgap_counter[0] ),
+    .A3(_021_),
+    .ZN(_197_));
+ NAND2_X1 _454_ (.A1(_196_),
+    .A2(_197_),
+    .ZN(_198_));
+ NAND2_X1 _455_ (.A1(_198_),
+    .A2(_001_),
+    .ZN(_199_));
+ NAND2_X1 _456_ (.A1(_175_),
+    .A2(_024_),
+    .ZN(_200_));
+ NAND2_X1 _457_ (.A1(_200_),
+    .A2(_001_),
+    .ZN(_201_));
+ NAND3_X1 _458_ (.A1(_196_),
+    .A2(_197_),
+    .A3(_201_),
+    .ZN(_202_));
+ NAND2_X1 _459_ (.A1(_199_),
+    .A2(_202_),
+    .ZN(_203_));
+ NAND2_X1 _460_ (.A1(_192_),
+    .A2(_203_),
+    .ZN(_068_));
+ NAND2_X1 _461_ (.A1(\stop.phase[1] ),
+    .A2(\stop.phase[0] ),
+    .ZN(_204_));
+ INV_X1 _462_ (.A(_204_),
+    .ZN(_205_));
+ INV_X1 _463_ (.A(\stop.phase[3] ),
+    .ZN(_206_));
+ NAND3_X1 _464_ (.A1(_205_),
+    .A2(\stop.phase[2] ),
+    .A3(_206_),
+    .ZN(_207_));
+ NAND3_X1 _465_ (.A1(\stop.phase[2] ),
+    .A2(\stop.phase[1] ),
+    .A3(\stop.phase[0] ),
+    .ZN(_208_));
+ NAND2_X1 _466_ (.A1(_208_),
+    .A2(\stop.phase[3] ),
+    .ZN(_209_));
+ NAND2_X1 _467_ (.A1(_207_),
+    .A2(_209_),
+    .ZN(_210_));
+ NAND3_X1 _468_ (.A1(_210_),
+    .A2(_135_),
+    .A3(_134_),
+    .ZN(_211_));
+ NAND2_X1 _469_ (.A1(_139_),
+    .A2(\stop.phase[3] ),
+    .ZN(_212_));
+ NAND2_X1 _470_ (.A1(_211_),
+    .A2(_212_),
+    .ZN(_069_));
+ NAND3_X1 _471_ (.A1(_130_),
+    .A2(_017_),
+    .A3(\stop.dec ),
+    .ZN(_213_));
+ INV_X1 _472_ (.A(_213_),
+    .ZN(_214_));
+ AND3_X1 _473_ (.A1(_136_),
+    .A2(_206_),
+    .A3(_026_),
+    .ZN(_215_));
+ NAND2_X1 _474_ (.A1(_214_),
+    .A2(_215_),
+    .ZN(_216_));
+ NAND3_X1 _475_ (.A1(_022_),
+    .A2(_005_),
+    .A3(_004_),
+    .ZN(_217_));
+ OR2_X1 _476_ (.A1(\stop.endgap_counter[2] ),
+    .A2(\stop.endgap_counter[3] ),
+    .ZN(_218_));
+ OAI21_X1 _477_ (.A(_148_),
+    .B1(_217_),
+    .B2(_218_),
+    .ZN(_219_));
+ NAND3_X1 _478_ (.A1(_216_),
+    .A2(_219_),
+    .A3(_174_),
+    .ZN(_220_));
+ INV_X1 _479_ (.A(_220_),
+    .ZN(_070_));
+ NAND3_X1 _480_ (.A1(\stop.rseq[2] ),
+    .A2(\stop.rseq[0] ),
+    .A3(\stop.rseq[1] ),
+    .ZN(_221_));
+ INV_X1 _481_ (.A(\stop.rseq[3] ),
+    .ZN(_222_));
+ OAI21_X1 _482_ (.A(_135_),
+    .B1(_221_),
+    .B2(_222_),
+    .ZN(_223_));
+ AOI21_X1 _483_ (.A(_223_),
+    .B1(_222_),
+    .B2(_221_),
+    .ZN(_071_));
+ OAI21_X1 _484_ (.A(_213_),
+    .B1(_173_),
+    .B2(_151_),
+    .ZN(_072_));
+ NAND2_X1 _485_ (.A1(_156_),
+    .A2(\rxhold[7] ),
+    .ZN(_224_));
+ NAND3_X1 _486_ (.A1(_154_),
+    .A2(\stop.rxshift[7] ),
+    .A3(_155_),
+    .ZN(_225_));
+ NAND2_X1 _487_ (.A1(_224_),
+    .A2(_225_),
+    .ZN(_073_));
+ INV_X1 _488_ (.A(rwbar),
+    .ZN(_226_));
+ OAI21_X1 _489_ (.A(rxav),
+    .B1(_119_),
+    .B2(_226_),
+    .ZN(_227_));
+ NAND2_X1 _490_ (.A1(_156_),
+    .A2(_227_),
+    .ZN(_074_));
+ OR2_X1 _491_ (.A1(_085_),
+    .A2(\ptos.txshift[0] ),
+    .ZN(serout));
+ NAND2_X1 _492_ (.A1(_086_),
+    .A2(\ptos.txshift[8] ),
+    .ZN(_228_));
+ OAI21_X2 _493_ (.A(_228_),
+    .B1(_123_),
+    .B2(_087_),
+    .ZN(_081_));
+ INV_X1 _494_ (.A(\stop.dec_b ),
+    .ZN(_229_));
+ AOI21_X1 _495_ (.A(\stop.dec_a ),
+    .B1(_229_),
+    .B2(\stop.dec ),
+    .ZN(_230_));
+ AOI21_X1 _496_ (.A(_230_),
+    .B1(\stop.dec_a ),
+    .B2(_229_),
+    .ZN(_082_));
+ NAND2_X1 _497_ (.A1(_100_),
+    .A2(\rxhold[7] ),
+    .ZN(_231_));
+ INV_X1 _498_ (.A(_231_),
+    .ZN(dbusout[7]));
+ HA_X1 _499_ (.A(\ptos.t_div16[0] ),
+    .B(\ptos.t_div16[1] ),
+    .CO(_010_),
+    .S(_233_));
+ HA_X1 _500_ (.A(_011_),
+    .B(_277_),
+    .CO(_012_),
+    .S(_013_));
+ HA_X1 _501_ (.A(\ptos.txframe[0] ),
+    .B(_277_),
+    .CO(_014_),
+    .S(_278_));
+ HA_X1 _502_ (.A(\ptos.txframe[0] ),
+    .B(\ptos.txframe[1] ),
+    .CO(_015_),
+    .S(_279_));
+ HA_X1 _503_ (.A(_016_),
+    .B(\stop.rseq[1] ),
+    .CO(_017_),
+    .S(_018_));
+ HA_X1 _504_ (.A(\stop.rseq[0] ),
+    .B(\stop.rseq[1] ),
+    .CO(_019_),
+    .S(_280_));
+ HA_X1 _505_ (.A(_020_),
+    .B(_021_),
+    .CO(_022_),
+    .S(_023_));
+ HA_X1 _506_ (.A(_020_),
+    .B(_021_),
+    .CO(_024_),
+    .S(_281_));
+ HA_X1 _507_ (.A(_025_),
+    .B(_282_),
+    .CO(_026_),
+    .S(_027_));
+ HA_X1 _508_ (.A(\stop.phase[0] ),
+    .B(_282_),
+    .CO(_028_),
+    .S(_283_));
+ HA_X1 _509_ (.A(\stop.phase[0] ),
+    .B(\stop.phase[1] ),
+    .CO(_029_),
+    .S(_284_));
+ LOGIC0_X1 _510_ (.Z(_285_));
+ BUF_X1 _511_ (.A(_285_),
+    .Z(dbusout[8]));
+ BUF_X1 _512_ (.A(_285_),
+    .Z(dbusout[9]));
+ BUF_X1 _513_ (.A(_285_),
+    .Z(dbusout[10]));
+ BUF_X1 _514_ (.A(_285_),
+    .Z(dbusout[11]));
+ BUF_X1 _515_ (.A(_285_),
+    .Z(dbusout[12]));
+ BUF_X1 _516_ (.A(_285_),
+    .Z(dbusout[13]));
+ BUF_X1 _517_ (.A(_285_),
+    .Z(dbusout[14]));
+ BUF_X1 _518_ (.A(_285_),
+    .Z(dbusout[15]));
+ DFF_X1 \ptos.start$_SDFFE_PP0P_  (.D(_063_),
+    .CK(clk),
+    .Q(\ptos.start ),
+    .QN(_008_));
+ DFF_X1 \ptos.t_div16[0]$_DFF_P_  (.D(_232_),
+    .CK(baudclk16),
+    .Q(\ptos.t_div16[0] ),
+    .QN(_232_));
+ DFF_X1 \ptos.t_div16[1]$_DFF_P_  (.D(_233_),
+    .CK(baudclk16),
+    .Q(\ptos.t_div16[1] ),
+    .QN(_266_));
+ DFF_X1 \ptos.t_div16[2]$_DFF_P_  (.D(_002_),
+    .CK(baudclk16),
+    .Q(\ptos.t_div16[2] ),
+    .QN(_265_));
+ DFF_X1 \ptos.t_div16[3]$_DFF_P_  (.D(_003_),
+    .CK(baudclk16),
+    .Q(\ptos.t_div16[3] ),
+    .QN(_274_));
+ DFF_X1 \ptos.txframe[0]$_SDFFCE_PP0P_  (.D(_032_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txframe[0] ),
+    .QN(_011_));
+ DFF_X1 \ptos.txframe[1]$_SDFFCE_PP0P_  (.D(_031_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txframe[1] ),
+    .QN(_277_));
+ DFF_X1 \ptos.txframe[2]$_SDFFCE_PP0P_  (.D(_030_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txframe[2] ),
+    .QN(_264_));
+ DFF_X1 \ptos.txframe[3]$_SDFFCE_PP0P_  (.D(_064_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txframe[3] ),
+    .QN(_007_));
+ DFF_X1 \ptos.txhold[0]$_DFFE_PP_  (.D(_039_),
+    .CK(clk),
+    .Q(\ptos.newd[1] ),
+    .QN(_256_));
+ DFF_X1 \ptos.txhold[1]$_DFFE_PP_  (.D(_038_),
+    .CK(clk),
+    .Q(\ptos.newd[2] ),
+    .QN(_257_));
+ DFF_X1 \ptos.txhold[2]$_DFFE_PP_  (.D(_037_),
+    .CK(clk),
+    .Q(\ptos.newd[3] ),
+    .QN(_258_));
+ DFF_X1 \ptos.txhold[3]$_DFFE_PP_  (.D(_036_),
+    .CK(clk),
+    .Q(\ptos.newd[4] ),
+    .QN(_259_));
+ DFF_X1 \ptos.txhold[4]$_DFFE_PP_  (.D(_035_),
+    .CK(clk),
+    .Q(\ptos.newd[5] ),
+    .QN(_260_));
+ DFF_X1 \ptos.txhold[5]$_DFFE_PP_  (.D(_034_),
+    .CK(clk),
+    .Q(\ptos.newd[6] ),
+    .QN(_261_));
+ DFF_X1 \ptos.txhold[6]$_DFFE_PP_  (.D(_033_),
+    .CK(clk),
+    .Q(\ptos.newd[7] ),
+    .QN(_262_));
+ DFF_X1 \ptos.txhold[7]$_DFFE_PP_  (.D(_067_),
+    .CK(clk),
+    .Q(\ptos.newd[8] ),
+    .QN(_237_));
+ DFF_X1 \ptos.txshift[0]$_SDFF_PP0_  (.D(_066_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txshift[0] ),
+    .QN(_272_));
+ DFF_X1 \ptos.txshift[1]$_DFF_P_  (.D(_075_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txshift[1] ),
+    .QN(_263_));
+ DFF_X1 \ptos.txshift[2]$_DFF_P_  (.D(_076_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txshift[2] ),
+    .QN(_271_));
+ DFF_X1 \ptos.txshift[3]$_DFF_P_  (.D(_077_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txshift[3] ),
+    .QN(_270_));
+ DFF_X1 \ptos.txshift[4]$_DFF_P_  (.D(_078_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txshift[4] ),
+    .QN(_269_));
+ DFF_X1 \ptos.txshift[5]$_DFF_P_  (.D(_079_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txshift[5] ),
+    .QN(_268_));
+ DFF_X1 \ptos.txshift[6]$_DFF_P_  (.D(_080_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txshift[6] ),
+    .QN(_267_));
+ DFF_X1 \ptos.txshift[7]$_DFF_P_  (.D(_081_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txshift[7] ),
+    .QN(_238_));
+ DFF_X1 \ptos.txshift[8]$_SDFF_PN1_  (.D(_065_),
+    .CK(\ptos.t_div16[3] ),
+    .Q(\ptos.txshift[8] ),
+    .QN(_239_));
+ DFF_X1 \stop.dec$_DFF_P_  (.D(_082_),
+    .CK(baudclk16),
+    .Q(\stop.dec ),
+    .QN(_004_));
+ DFF_X1 \stop.dec_a$_DFF_P_  (.D(serin),
+    .CK(baudclk16),
+    .Q(\stop.dec_a ),
+    .QN(_275_));
+ DFF_X1 \stop.dec_b$_DFF_P_  (.D(\stop.dec_a ),
+    .CK(baudclk16),
+    .Q(\stop.dec_b ),
+    .QN(_276_));
+ DFF_X1 \stop.endgap_counter[0]$_SDFFCE_PP1P_  (.D(_062_),
+    .CK(baudclk16),
+    .Q(\stop.endgap_counter[0] ),
+    .QN(_020_));
+ DFF_X1 \stop.endgap_counter[1]$_SDFFCE_PP0P_  (.D(_061_),
+    .CK(baudclk16),
+    .Q(\stop.endgap_counter[1] ),
+    .QN(_021_));
+ DFF_X1 \stop.endgap_counter[2]$_SDFFCE_PP1P_  (.D(_060_),
+    .CK(baudclk16),
+    .Q(\stop.endgap_counter[2] ),
+    .QN(_000_));
+ DFF_X1 \stop.endgap_counter[3]$_SDFFCE_PP0P_  (.D(_068_),
+    .CK(baudclk16),
+    .Q(\stop.endgap_counter[3] ),
+    .QN(_001_));
+ DFF_X1 \stop.pardata[0]$_DFFE_PP_  (.D(_059_),
+    .CK(clk),
+    .Q(\rxhold[0] ),
+    .QN(_240_));
+ DFF_X1 \stop.pardata[1]$_DFFE_PP_  (.D(_058_),
+    .CK(clk),
+    .Q(\rxhold[1] ),
+    .QN(_241_));
+ DFF_X1 \stop.pardata[2]$_DFFE_PP_  (.D(_057_),
+    .CK(clk),
+    .Q(\rxhold[2] ),
+    .QN(_242_));
+ DFF_X1 \stop.pardata[3]$_DFFE_PP_  (.D(_056_),
+    .CK(clk),
+    .Q(\rxhold[3] ),
+    .QN(_243_));
+ DFF_X1 \stop.pardata[4]$_DFFE_PP_  (.D(_055_),
+    .CK(clk),
+    .Q(\rxhold[4] ),
+    .QN(_244_));
+ DFF_X1 \stop.pardata[5]$_DFFE_PP_  (.D(_054_),
+    .CK(clk),
+    .Q(\rxhold[5] ),
+    .QN(_245_));
+ DFF_X1 \stop.pardata[6]$_DFFE_PP_  (.D(_053_),
+    .CK(clk),
+    .Q(\rxhold[6] ),
+    .QN(_246_));
+ DFF_X1 \stop.pardata[7]$_DFFE_PP_  (.D(_073_),
+    .CK(clk),
+    .Q(\rxhold[7] ),
+    .QN(_234_));
+ DFF_X1 \stop.phase[0]$_SDFFCE_PN0P_  (.D(_042_),
+    .CK(baudclk16),
+    .Q(\stop.phase[0] ),
+    .QN(_025_));
+ DFF_X1 \stop.phase[1]$_SDFFCE_PN0P_  (.D(_041_),
+    .CK(baudclk16),
+    .Q(\stop.phase[1] ),
+    .QN(_282_));
+ DFF_X1 \stop.phase[2]$_SDFFCE_PN0P_  (.D(_040_),
+    .CK(baudclk16),
+    .Q(\stop.phase[2] ),
+    .QN(_255_));
+ DFF_X1 \stop.phase[3]$_SDFFCE_PN0P_  (.D(_069_),
+    .CK(baudclk16),
+    .Q(\stop.phase[3] ),
+    .QN(_006_));
+ DFF_X1 \stop.rseq[0]$_SDFF_PN0_  (.D(_045_),
+    .CK(baudclk16),
+    .Q(\stop.rseq[0] ),
+    .QN(_016_));
+ DFF_X1 \stop.rseq[1]$_SDFF_PN0_  (.D(_044_),
+    .CK(baudclk16),
+    .Q(\stop.rseq[1] ),
+    .QN(_254_));
+ DFF_X1 \stop.rseq[2]$_SDFF_PN0_  (.D(_043_),
+    .CK(baudclk16),
+    .Q(\stop.rseq[2] ),
+    .QN(_009_));
+ DFF_X1 \stop.rseq[3]$_SDFF_PN0_  (.D(_071_),
+    .CK(baudclk16),
+    .Q(\stop.rseq[3] ),
+    .QN(_236_));
+ DFF_X1 \stop.running$_SDFFE_PP0P_  (.D(_070_),
+    .CK(baudclk16),
+    .Q(\stop.running ),
+    .QN(_005_));
+ DFF_X1 \stop.rxav$_SDFFE_PP1P_  (.D(_074_),
+    .CK(clk),
+    .Q(rxav),
+    .QN(_273_));
+ DFF_X1 \stop.rxshift[0]$_DFFE_PP_  (.D(_052_),
+    .CK(baudclk16),
+    .Q(\stop.rxshift[0] ),
+    .QN(_247_));
+ DFF_X1 \stop.rxshift[1]$_DFFE_PP_  (.D(_051_),
+    .CK(baudclk16),
+    .Q(\stop.rxshift[1] ),
+    .QN(_248_));
+ DFF_X1 \stop.rxshift[2]$_DFFE_PP_  (.D(_050_),
+    .CK(baudclk16),
+    .Q(\stop.rxshift[2] ),
+    .QN(_249_));
+ DFF_X1 \stop.rxshift[3]$_DFFE_PP_  (.D(_049_),
+    .CK(baudclk16),
+    .Q(\stop.rxshift[3] ),
+    .QN(_250_));
+ DFF_X1 \stop.rxshift[4]$_DFFE_PP_  (.D(_048_),
+    .CK(baudclk16),
+    .Q(\stop.rxshift[4] ),
+    .QN(_251_));
+ DFF_X1 \stop.rxshift[5]$_DFFE_PP_  (.D(_047_),
+    .CK(baudclk16),
+    .Q(\stop.rxshift[5] ),
+    .QN(_252_));
+ DFF_X1 \stop.rxshift[6]$_DFFE_PP_  (.D(_046_),
+    .CK(baudclk16),
+    .Q(\stop.rxshift[6] ),
+    .QN(_253_));
+ DFF_X1 \stop.rxshift[7]$_DFFE_PP_  (.D(_072_),
+    .CK(baudclk16),
+    .Q(\stop.rxshift[7] ),
+    .QN(_235_));
+endmodule

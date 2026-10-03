@@ -1,0 +1,16 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /design/work/results/nangate45/UART16/base/2_2_floorplan_macro.odb
+read_sdc /design/work/results/nangate45/UART16/base/2_1_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+[INFO TAP-0004] Inserted 50 endcaps.
+[INFO TAP-0005] Inserted 0 tapcells.
+Design area 537 um^2 43% utilization.
+write_db /design/work/results/nangate45/UART16/base/2_3_floorplan_tapcell.odb
+Elapsed time: 0:00.35[h:]min:sec. CPU time: user 0.29 sys 0.06 (98%). Peak memory: 96256KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+2_3_floorplan_tapcell     .odb            0             94 2e395214e8d749a4b2a0

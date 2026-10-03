@@ -1,0 +1,26 @@
+Yosys 0.68+post (git sha1 UNKNOWN, Release, GNU /usr/local/bin/wrapped-cc/g++ 11.4.0)
+Using ABC area script.
+Extracting clock period from SDC file: /design/work/results/nangate45/UART16/base/clock_period.txt
+Setting clock period to 0.46
+1. Executing Liberty frontend: /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+2. Executing Liberty frontend: /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+3. Executing Verilog-2005 frontend: /design/uart16.v
+4. Executing Verilog-2005 frontend: /OpenROAD-flow-scripts/flow/platforms/nangate45/cells_clkgate.v
+5. Executing HIERARCHY pass (managing design hierarchy).
+6. Executing AST frontend in derive mode using pre-parsed AST for module `\UART16'.
+6.1. Analyzing design hierarchy..
+6.2. Executing AST frontend in derive mode using pre-parsed AST for module `\PTOS'.
+6.3. Executing AST frontend in derive mode using pre-parsed AST for module `\STOP'.
+6.4. Analyzing design hierarchy..
+6.5. Analyzing design hierarchy..
+7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Warning: Ignoring module PTOS because it contains processes (run 'proc' command first).
+Warning: Ignoring module STOP because it contains processes (run 'proc' command first).
+8. Executing RTLIL backend.
+Warnings: 2 unique messages, 2 total
+End of script. Logfile hash: 0cae91c4f4, time: 0.13s, user: 0.08s, system: 0.03s, MEM: 42.50 MB peak
+Yosys 0.68+post (git sha1 UNKNOWN, Release, GNU /usr/local/bin/wrapped-cc/g++ 11.4.0)
+Time spent: 82% 4x read_liberty (0 sec), 5% 4x read_verilog (0 sec), ...
+Elapsed time: 0:00.14[h:]min:sec. CPU time: user 0.10 sys 0.04 (98%). Peak memory: 46720KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+1_1_yosys_canonicalize    .rtlil          0             45 5120d2c03d0663dfedde

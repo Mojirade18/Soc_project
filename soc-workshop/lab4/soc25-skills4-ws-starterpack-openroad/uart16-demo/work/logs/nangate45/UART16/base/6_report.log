@@ -1,0 +1,77 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI -Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db /design/work/results/nangate45/UART16/base/6_1_fill.odb
+read_sdc /design/work/results/nangate45/UART16/base/6_1_fill.sdc
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+write_db /design/work/results/nangate45/UART16/base/6_final.odb
+write_sdc -no_timestamp /design/work/results/nangate45/UART16/base/6_final.sdc
+Deleted 0 routing obstructions
+Global output passed lec test
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file /OpenROAD-flow-scripts/flow/platforms/nangate45/rcx_patterns.rules ...
+[INFO RCX-0436] RC segment generation UART16 (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 901 rc segments
+[INFO RCX-0439] Coupling Cap extraction UART16 ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 49% of 1448 wires extracted
+[INFO RCX-0442] 100% of 1448 wires extracted
+[INFO RCX-0045] Extract 405 nets, 1247 rsegs, 1247 caps, 1611 ccs
+[INFO RCX-0443] 405 nets finished
+[INFO PSM-0040] All shapes on net VDD are connected.
+########## IR report #################
+Net              : VDD
+Corner           : default
+Total power      : 5.90e-04 W
+Supply voltage   : 1.10e+00 V
+Worstcase voltage: 1.10e+00 V
+Average voltage  : 1.10e+00 V
+Average IR drop  : 1.80e-03 V
+Worstcase IR drop: 3.07e-03 V
+Percentage drop  : 0.28 %
+######################################
+[INFO PSM-0040] All shapes on net VSS are connected.
+########## IR report #################
+Net              : VSS
+Corner           : default
+Total power      : 5.90e-04 W
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 4.91e-03 V
+Average voltage  : 1.89e-03 V
+Average IR drop  : 1.89e-03 V
+Worstcase IR drop: 4.91e-03 V
+Percentage drop  : 0.45 %
+######################################
+Cell type report:                       Count       Area
+  Fill cell                               402     708.89
+  Tap cell                                 50      13.30
+  Clock buffer                              3       3.99
+  Timing Repair Buffer                     24      19.15
+  Inverter                                 40      22.08
+  Clock inverter                            1       0.53
+  Sequential cell                          59     266.80
+  Multi-Input combinational cell          185     215.46
+  Total                                   764    1250.20
+Report metrics stage 6, finish...
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 541 um^2 43% utilization.
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: /design/work/reports/nangate45/UART16/base/final_all.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: /design/work/reports/nangate45/UART16/base/final_routing.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: /design/work/reports/nangate45/UART16/base/final_placement.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: /design/work/reports/nangate45/UART16/base/final_ir_drop.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: /design/work/reports/nangate45/UART16/base/final_clocks.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: /design/work/reports/nangate45/UART16/base/cts_default_core_clock.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: /design/work/reports/nangate45/UART16/base/cts_default_core_clock_layout.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: /design/work/reports/nangate45/UART16/base/final_resizer.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: /design/work/reports/nangate45/UART16/base/final_congestion.webp.png
+[WARNING GUI-0010] File path does not end with a valid extension, new path is: /design/work/reports/nangate45/UART16/base/final_worst_path.webp.png
+Elapsed time: 0:01.78[h:]min:sec. CPU time: user 1.66 sys 0.19 (104%). Peak memory: 159360KB.
+Log                       Ext     Elapsed/s Peak Memory/MB sha1sum result [0:20)
+6_report                                  1            155                  N/A

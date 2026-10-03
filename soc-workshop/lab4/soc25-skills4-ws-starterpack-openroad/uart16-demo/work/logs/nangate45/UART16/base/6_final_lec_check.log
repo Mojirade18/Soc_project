@@ -1,0 +1,86 @@
+[2026-10-03 15:19:00.660] [miter_logger] [info] MiterStrategy::run starting
+[2026-10-03 15:19:00.660] [miter_logger] [info] Collecting POs for design 0: UART16
+
+[2026-10-03 15:19:00.663] [miter_logger] [info] Collected 143 PIs for design 0
+
+[2026-10-03 15:19:00.663] [miter_logger] [info] Collected 135 POs for design 0
+
+[2026-10-03 15:19:00.663] [miter_logger] [info] design 0 PI summary by model/term (143 total terminals, 10 unique rows):
+| Model     | Term      | Count |
+|-----------|-----------|-------|
+| DFF_X1    | Q         |    59 |
+| DFF_X1    | QN        |    59 |
+| UART16    | dbusin    |    16 |
+| UART16    | addr      |     3 |
+| LOGIC0_X1 | Z         |     1 |
+| UART16    | baudclk16 |     1 |
+| UART16    | clk       |     1 |
+| UART16    | rwbar     |     1 |
+| UART16    | sel       |     1 |
+| UART16    | serin     |     1 |
+
+[2026-10-03 15:19:00.663] [miter_logger] [info] design 0 PO summary by model/term (135 total terminals, 4 unique rows):
+| Model  | Term    | Count |
+|--------|---------|-------|
+| DFF_X1 | CK      |    59 |
+| DFF_X1 | D       |    59 |
+| UART16 | dbusout |    16 |
+| UART16 | serout  |     1 |
+
+[2026-10-03 15:19:00.663] [miter_logger] [info] Collecting POs for design 1: UART16
+
+[2026-10-03 15:19:00.665] [miter_logger] [info] size of common inputs: 142
+[2026-10-03 15:19:00.665] [miter_logger] [info] size of diff0 inputs: 0
+[2026-10-03 15:19:00.665] [miter_logger] [info] size of diff1 inputs: 0
+[2026-10-03 15:19:00.665] [miter_logger] [info] Collected 150 PIs for design 1
+
+[2026-10-03 15:19:00.665] [miter_logger] [info] Collected 135 POs for design 1
+
+[2026-10-03 15:19:00.665] [miter_logger] [info] design 1 PI summary by model/term (150 total terminals, 10 unique rows):
+| Model     | Term      | Count |
+|-----------|-----------|-------|
+| DFF_X1    | Q         |    59 |
+| DFF_X1    | QN        |    59 |
+| UART16    | dbusin    |    16 |
+| LOGIC0_X1 | Z         |     8 |
+| UART16    | addr      |     3 |
+| UART16    | baudclk16 |     1 |
+| UART16    | clk       |     1 |
+| UART16    | rwbar     |     1 |
+| UART16    | sel       |     1 |
+| UART16    | serin     |     1 |
+
+[2026-10-03 15:19:00.665] [miter_logger] [info] design 1 PO summary by model/term (135 total terminals, 4 unique rows):
+| Model  | Term    | Count |
+|--------|---------|-------|
+| DFF_X1 | CK      |    59 |
+| DFF_X1 | D       |    59 |
+| UART16 | dbusout |    16 |
+| UART16 | serout  |     1 |
+
+[2026-10-03 15:19:00.665] [miter_logger] [info] normalizeInputs: starting
+[2026-10-03 15:19:00.665] [miter_logger] [info] diff0 input: 781.79.0.
+[2026-10-03 15:19:00.665] [miter_logger] [info] diff1 input: 878.79.0.
+[2026-10-03 15:19:00.665] [miter_logger] [info] diff1 input: 876.79.0.
+[2026-10-03 15:19:00.665] [miter_logger] [info] diff1 input: 879.79.0.
+[2026-10-03 15:19:00.665] [miter_logger] [info] diff1 input: 877.79.0.
+[2026-10-03 15:19:00.665] [miter_logger] [info] diff1 input: 881.79.0.
+[2026-10-03 15:19:00.665] [miter_logger] [info] diff1 input: 880.79.0.
+[2026-10-03 15:19:00.665] [miter_logger] [info] diff1 input: 883.79.0.
+[2026-10-03 15:19:00.665] [miter_logger] [info] diff1 input: 882.79.0.
+[2026-10-03 15:19:00.665] [miter_logger] [info] size of common inputs: 142
+[2026-10-03 15:19:00.665] [miter_logger] [info] size of diff0 inputs: 1
+[2026-10-03 15:19:00.665] [miter_logger] [info] size of diff1 inputs: 8
+[2026-10-03 15:19:00.665] [miter_logger] [info] normalizeOutputs: starting
+[2026-10-03 15:19:00.666] [miter_logger] [info] size of common outputs: 135
+[2026-10-03 15:19:00.666] [miter_logger] [info] size of diff0 outputs: 0
+[2026-10-03 15:19:00.666] [miter_logger] [info] size of diff1 outputs: 0
+[2026-10-03 15:19:00.666] [miter_logger] [info] size of PIs in circuit 0: 143
+[2026-10-03 15:19:00.666] [miter_logger] [info] size of PIs in circuit 1: 150
+[2026-10-03 15:19:00.666] [miter_logger] [info] size of POs in circuit 0: 135
+[2026-10-03 15:19:00.666] [miter_logger] [info] size of POs in circuit 1: 135
+[2026-10-03 15:19:00.671] [miter_logger] [info] Building miter expression
+[2026-10-03 15:19:00.671] [miter_logger] [info] Finished building miter expression
+[2026-10-03 15:19:00.671] [miter_logger] [info] Starting solver
+[2026-10-03 15:19:00.672] [miter_logger] [info] SAT solver finished: UNSAT
+[2026-10-03 15:19:00.672] [miter_logger] [info] Circuits are IDENTICAL
