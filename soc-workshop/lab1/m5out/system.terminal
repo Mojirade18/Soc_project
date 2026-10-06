@@ -15,22 +15,4 @@ mymon_starting:>>> 1 2 3 4    5 6 7 8<<<
 S2 20:00; 10:00 T1=22345678 T2=32345678
 Mixerton ST.  CBG mymon/mixbug low-level monitor.
 Running on core 101
-mymon:mm w 1c0d0000
-1C0D0000 0000A5A4 >
-1C0D0004 00000000 >4567
-ERROR 1C0D0004 00003626 >
-1C0D0008 0000000E >.
-mymon:
-mymon:mm w 1c0d0000
-1C0D0000 0000A5A4 >
-1C0D0004 00003626 >4456
-ERROR 1C0D0004 00003717 >
-1C0D0008 0000000D >mdw 1c0d0000 1
-ERROR 1C0D0008 0000000D >
-1C0D000C 0000A5A4 >.
-mymon:
-mymon:mdw 1c0d0000 1
-1C0D0000  0000A5A4   00003717   0000000D   0000A5A4   ................
 mymon:
-mymon:quit
-
